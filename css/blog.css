@@ -43,7 +43,7 @@ ul.postlist {
 	color: #808080
 }
 
-div.container, div.content>.container {
+div.postlist, div.content>.postlist {
     width: 50em;
     display: block;
 }
