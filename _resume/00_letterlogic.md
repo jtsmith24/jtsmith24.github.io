@@ -1,5 +1,7 @@
 ---
+category: Work Experience
 company_name: LetterLogic, Inc
+location: Nashville, TN
 job_title: .NET Developer
 employment_date: August 2016 - Present
 ---

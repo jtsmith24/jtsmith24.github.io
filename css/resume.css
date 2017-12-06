@@ -5,11 +5,29 @@
     border-width: 1px;
 }
 
+.resume p {
+	margin-bottom: 5px;
+}
 
-.resume-description {
+.resume-category {
+	width: 100%;
+	font-weight: 700;
+	text-align: left;
+	margin-left: 10px;
+}
+
+.resume-header {
+	font-weight: 550;
+	max-width: 100%;
+	font-size: 1.5vmin;
+}
+
+.resume-details {
     text-align: left;
     display: inline-block;
-    max-width: 100%;
+    width: 100%;
+    margin-left: 5%;
+    margin-bottom: 10px;
 }
 
 section.resume {
