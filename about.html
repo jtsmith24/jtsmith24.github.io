@@ -10,7 +10,11 @@ title: About
 				<h2 class="section-heading">Resume</h2>
 				<hr>
 				{% for resume_item in site.resume %}
-				<p>{{ resume_item.company_name }} - {{ resume_item.job_title }} - {{ resume_item.employment_date }}</p>
+				<div class="row">
+					<div class="col-sm-4">{{ resume_item.company_name }}</div>
+					<div class="col-sm-4">{{ resume_item.job_title }}</div>
+					<div class="col-sm-4">{{ resume_item.employment_date }}</div>
+				</div>>
 				<div class="resume-description">{{ resume_item.content }}</div>
 				{% endfor %}
 			</div>

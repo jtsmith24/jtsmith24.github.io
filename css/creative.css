@@ -28,12 +28,6 @@ hr.heading {
     margin-top: 0px;
 }
 
-.resume hr {
-    max-width: none;
-    width: 100%;
-    border-width: 1px;
-}
-
 a {
     color: #fff;
     -webkit-transition: all .35s;
@@ -61,12 +55,6 @@ p {
     line-height: 1.5;
 }
 
-.resume-description {
-    text-align: left;
-    display: inline-block;
-    max-width: 100%;
-}
-
 .bg-primary {
     color: #222;
     background-color: #fff;
@@ -91,7 +79,7 @@ section {
     padding: 100px 0;
 }
 
-section.resume {
+section.top {
     padding-top: 50px;
     padding-bottom: 100px;
 }
