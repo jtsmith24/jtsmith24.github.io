@@ -2,7 +2,37 @@
 layout: page
 title: About
 ---
-<section class="bg-primary resume" id="about">
+<section class="bg-primary no-padding" id="portfolio">
+	<div class="container top">
+	<div class="row">
+			{% for portfolio_item in site.portfolio %}
+			<div class="post-list-item col-sm-6">
+				<div class="post-list-item-container">
+					<div class="item-thumb" bg-" style="background-image: url({{ portfolio_item.image_path }});""></div>
+					<a href="{{ portfolio_item.link }}">
+						<div class="item-desc">
+							<p>
+								{{ portfolio_item.excerpt }}
+							</p>
+						</div>
+					</a>
+					<div class="item-label">
+						<div class="item-title">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						</div>
+						<div class="item-meta clearfix">
+							<a href="about.html" class="btn btn-primary btn-xl">More about this</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+<section class="bg-primary resume" id="resume">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 text-center">
@@ -12,13 +42,16 @@ title: About
 				{% for resume_item in site.resume %}
 				<div class="row resume-category col-sm-12"> {{resume_item.category}} </div>
 				<div class="row resume-header">
-					<div class="col-sm-4">{{ resume_item.company_name }}</div>
-					<div class="col-sm-4">{{ resume_item.job_title }}</div>
-					<div class="col-sm-4">{{ resume_item.employment_date }}</div>
+					<div class="col-sm-5">{{ resume_item.company_name }}
+						{% if resume_item.location %}
+						- {{ resume_item.location}} 
+						{% endif %}</div>
+						<div class="col-sm-4">{{ resume_item.job_title }}</div>
+						<div class="col-sm-3">{{ resume_item.employment_date }}</div>
+					</div>
+					<div class="row resume-details pull-left col-sm-12">{{ resume_item.content }}</div>
+					{% endfor %}
 				</div>
-				<div class="resume-details pull-left col-sm-12">{{ resume_item.content }}</div>
-				{% endfor %}
 			</div>
 		</div>
-	</div>
-</section>
+	</section>

@@ -92,6 +92,10 @@ aside {
     padding: 0;
 }
 
+.top {
+    padding-top: 10px;
+}
+
 .navbar-default {
     border-color: rgba(34,34,34,.05);
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;

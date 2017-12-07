@@ -1,6 +1,6 @@
 ---
 image_path: /img/portfolio/3.jpg
-category: Web Design
-project_name: Pinterest
 link: https://pinterest.com
+excerpt: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua."
 ---
