@@ -9,7 +9,7 @@ title: About
 			<div class="post-list-item col-lg-6 col-sm-6 col-xs-6">
 				<div class="post-list-item-container">
 					<div class="item-thumb" bg-" style="background-image: url({{ portfolio_item.image_path }});""></div>
-					<a href="{{ portfolio_item.link }}">
+					<a href="{{ portfolio_item.image_link }}" target="_blank">
 						<div class="item-desc">
 							<p>
 								{{ portfolio_item.excerpt }}
@@ -18,10 +18,10 @@ title: About
 					</a>
 					<div class="item-label">
 						<div class="item-title">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							{{ portfolio_item.description }}
 						</div>
 						<div class="item-meta clearfix">
-							<a href="about.html" class="btn btn-primary btn-xl">More</a>
+							<a href="{{ portfolio_item.link }}" class="btn btn-primary btn-xl"> {{ portfolio_item.button_text }}</a>
 						</div>
 
 					</div>
