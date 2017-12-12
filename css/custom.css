@@ -1,4 +1,70 @@
+.profile-image{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px #000;
+  background-image: url("/img/Profile_Large.jpg");
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  margin: 20px;
+}
 
+/*Blog styles*/
+a.post:link {
+    color: #222;
+    text-decoration: none;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+a.post:visited {
+  color: #222;
+}
+a.post:hover,
+a.post:focus {
+    color: #eb3812;
+}
+
+.post p {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.post h1 {
+  margin-bottom: 10px;
+  margin-top: 2px;
+}
+
+hr.post {
+    max-width: 50px;
+    border-color: #222;
+    border-width: 3px;
+}
+
+ul.postlist {
+  list-style-type: none;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.post li {
+  margin-bottom: 3em;
+    padding-top: 1.5em;
+}
+
+.subheading {
+    text-align: justify;
+  color: #808080
+}
+
+div.postlist, div.content>.postlist {
+    width: 50em;
+    display: block;
+}
+/*END Blog Styles*/
+
+/*Styles used on Resume Section*/
 .resume hr {
     max-width: none;
     width: 100%;
@@ -46,6 +112,10 @@ section.resume {
     padding-bottom: 100px;
 }
 
+/*END Styles used on Resume Section*/
+
+
+/*Styles from Liberxue Theme - http://jekyllthemes.org/themes/Liberxue-Theme/*/
 .post-list-item{
     height:auto;
     padding:18px;
@@ -102,7 +172,6 @@ section.resume {
     font-size:14px;
     margin:0;
     padding:0;
-    word-break:break-all;
     opacity:0;
     color:#fff;
 }
@@ -272,3 +341,5 @@ section.resume {
    .post-onelist-item-container .item-readmore{display:none;}
    .post-onelist-item-container .onelist-item-thumb{min-height:180px;}
 }
+
+/*END Styles from Liberxue Theme - http://jekyllthemes.org/themes/Liberxue-Theme/*/

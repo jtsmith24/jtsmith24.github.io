@@ -1,9 +1,9 @@
 ---
-image_path: /img/portfolio/3.jpg
-image_link: /blog.html
-link:
+image_path: /img/portfolio/Big_Dam_Bridge_1.jpg
+image_link: "https://www.twitter.com/ImJordanSmith"
+image_target: "_blank"
+button_link: /blog.html
 button_text: "Blog"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua."
-description: "I write about stuff I'm interested in like technology, cycling, videography and the outdoors."
+excerpt: "I also occasionally tweet. Click to see my Twitter profile."
+description: "I write about stuff I'm interested in like psychology, technology, cycling, videography and the outdoors."
 ---
