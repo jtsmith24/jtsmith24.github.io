@@ -9,13 +9,6 @@ title: About
 			<div class="post-list-item col-lg-6 col-sm-6 col-xs-6">
 				<div class="post-list-item-container">
 					<div class="item-thumb" bg-" style="background-image: url({{ portfolio_item.image_path }});""></div>
-					<a href="{{ portfolio_item.image_link }}" target="{{portfolio_item.image_target}}">
-						<div class="item-desc">
-							<p>
-								{{ portfolio_item.excerpt }}
-							</p>
-						</div>
-					</a>
 					<div class="item-label">
 						<div class="item-title">
 							{{ portfolio_item.description }}
@@ -41,7 +34,7 @@ title: About
 				{% for resume_item in site.resume %}
 				<div class="row resume-category col-sm-12"> {{resume_item.category}} </div>
 				<div class="row resume-header">
-					<div class="col-sm-4">{{ resume_item.company_name }}
+					<div class="col-sm-4"><a href="{{resume_item.company_link}}" target="_blank">{{ resume_item.company_name }}</a>
 						{% if resume_item.location %}
 						- {{ resume_item.location}} 
 					{% endif %}

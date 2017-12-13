@@ -1,6 +1,7 @@
 ---
 category: Work Experience
-company_name: LetterLogic, Inc
+company_name: Apex Revenue Technologies
+company_link: "http://www.apexrevtech.com/"
 location: Nashville, TN
 job_title: .NET Developer
 employment_date: August 2016 - Present

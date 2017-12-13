@@ -1,5 +1,6 @@
 ---
 company_name: Camp Shiloh
+company_link: "https://www.shilohnyc.org/"
 location: New York City, NY
 job_title: Camp Counselor
 employment_date: June 2015 – August 2015
