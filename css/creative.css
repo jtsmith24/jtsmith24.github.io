@@ -16,7 +16,7 @@ body {
 
 hr {
     max-width: 50px;
-    border-color: #f05f40;
+    border-color: #C73254;
     border-width: 3px;
 }
 
@@ -29,7 +29,7 @@ hr.heading {
 }
 
 a {
-    color: #fff;
+    color: #CCBEF1;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -37,7 +37,8 @@ a {
 
 a:hover,
 a:focus {
-    color: #787878;
+    color: #8A95FE;
+    text-decoration: none;
 }
 
 h1,
@@ -212,10 +213,12 @@ header .header-content .header-content-inner h1 {
     margin-bottom: 0;
     font-weight: 700;
     font-size: 50px;
+    color: #FEF1E3;
 }
 
 header .header-content .header-content-inner h2 {
     font-size: 25px;
+    color: #FEF1E3;
 }
 
 header .header-content .header-content-inner hr {
@@ -403,9 +406,9 @@ fieldset[disabled] .btn-default.active {
 }
 
 .btn-primary {
-    border-color: #f05f40;
+    border-color: #C73254;
     color: #fff;
-    background-color: #f05f40;
+    background-color: #C21E43;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -417,9 +420,9 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-    border-color: #ed431f;
+    border-color: #8A95FE;
     color: #fff;
-    background-color: #ee4b28;
+    background-color: #8A95FE;
 }
 
 .btn-primary:active,
