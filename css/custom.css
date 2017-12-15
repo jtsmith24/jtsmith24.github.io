@@ -20,12 +20,6 @@
   padding: 10px;
 }
 
-.default
-a:hover,
-a:focus {
-    color: #787878;
-}
-
 .btn-lg {
     width: 100px;
     font-size: 18px;
@@ -33,6 +27,22 @@ a:focus {
     margin-left: 5px;
     margin-right: 5px;
     color: #FEF1E3;
+}
+
+.btn-primary {
+    background-color: #C21E43;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    background-color: #8A95FE;
 }
 
 .info-row {
@@ -54,7 +64,8 @@ a.post:visited {
 }
 a.post:hover,
 a.post:focus {
-    color: #eb3812;
+    color: #C21E43;
+    text-decoration: none;
 }
 
 .post p {
@@ -68,9 +79,10 @@ a.post:focus {
 }
 
 hr.post {
-    max-width: 50px;
-    border-color: #222;
-    border-width: 3px;
+    max-width: none;
+    border-width: 1px;
+    margin-top: 75px;
+    margin-bottom: 75px;
 }
 
 ul.postlist {
@@ -80,7 +92,7 @@ ul.postlist {
 }
 
 .post li {
-  margin-bottom: 40px;
+  margin-bottom: 75px;
 }
 
 .post.post-list-item-container{

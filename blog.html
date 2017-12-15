@@ -5,7 +5,16 @@ title: Blog
 <section class="top">
 	<div class="container postlist">
 		<div class="row">
-			<div class="text-center">
+			<div class="text-center">				
+				{% if site.posts == empty %}
+				<h1 style="margin-bottom: 75px;">Nothing here yet...</h1>
+				<div class="row info-row">
+						<div class="col-sm-6 col-sm-offset-3">
+							<a href="index.html" class="btn btn-primary btn-lg">Front</a>
+							<a href="about.html" class="btn btn-primary btn-lg">About</a>
+						</div>
+				</div>
+				{% else %}
 				<ul style="list-style-position: inside" class="postlist">
 					{% for post in site.posts %}
 					<div class="post">
@@ -14,9 +23,11 @@ title: Blog
 						<h1><a href="{{ post.url }}" class="post">{{ post.title }}</a></h1>
 						{% if post.excerpt %} <p class="subheading">{{ post.excerpt | remove: '\[ ... \]' | remove: '\( ... \)' | markdownify | strip_html | strip_newlines | escape_once }}</p>{% endif %}
 						</li>
+						<hr class="post">
 					</div>
-					{% endfor %}
+					{% endfor %}					
 				</ul>
+				{% endif %}
 			</div>
 		</div>
 	</div>
