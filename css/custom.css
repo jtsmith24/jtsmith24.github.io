@@ -16,6 +16,21 @@
     transition: all .35s;
 }
 
+.contact {
+  text-align: center;
+}
+
+.contact a {
+  color: #C21E43
+}
+
+.contact
+a:hover,
+a:focus {
+    color: #8A95FE;
+    text-decoration: none;
+}
+
 .social a{
   padding: 10px;
 }
@@ -26,7 +41,10 @@
     text-transform: none;
     margin-left: 5px;
     margin-right: 5px;
-    color: #FEF1E3;
+}
+
+.btn-xl {
+    padding: 15px 30px;
 }
 
 .btn-primary {
@@ -166,9 +184,15 @@ div.postlist, div.content>.postlist {
     overflow: hidden;
     border-radius:.6px;
     background-color:#fff;
-    box-shadow: 2px 2px 4px rgba(159,202,255,.5);
+    box-shadow: 2px 2px 4px #696969;
     border-radius: .6rem;
 }
+
+/*.resume-container:hover{
+    -webkit-box-shadow: 0 15px 30px rgba(0,0,0,.07);
+    box-shadow: 2px 2px 4px rgba(159,202,255,.5);
+    border-radius: .6rem;
+}*/
 
 section.resume {
     padding-top: 50px;
@@ -193,15 +217,15 @@ section.resume {
     padding:0;
     border-radius:.6px;
     background-color:#fff;
-    box-shadow: 2px 2px 4px rgba(159,202,255,.5);
+    box-shadow: 2px 2px 4px #696969;
     border-radius: .6rem;
 }
 
-.post-list-item-container:hover{
+/*.post-list-item-container:hover{
     -webkit-box-shadow: 0 15px 30px rgba(0,0,0,.07);
     box-shadow: 2px 2px 4px rgba(159,202,255,.5);
     border-radius: .6rem;
-}
+}*/
 
 .post-list-item-container .item-thumb{
     position:relative;

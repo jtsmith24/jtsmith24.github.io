@@ -213,12 +213,10 @@ header .header-content .header-content-inner h1 {
     margin-bottom: 0;
     font-weight: 700;
     font-size: 50px;
-    color: #FEF1E3;
 }
 
 header .header-content .header-content-inner h2 {
     font-size: 25px;
-    color: #FEF1E3;
 }
 
 header .header-content .header-content-inner hr {
@@ -442,7 +440,6 @@ fieldset[disabled] .btn-primary.active {
 
 .btn {
     border: 0;
-    border-radius: 300px;
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
