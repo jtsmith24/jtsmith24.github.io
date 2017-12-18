@@ -1,5 +1,5 @@
 current directory: /mnt/c/Users/Jordan Smith/Documents/GitHub/jtsmith24.github.io/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.18/ext/ffi_c
-/usr/bin/ruby2.3 -r ./siteconf20171217-870-4wrfi3.rb extconf.rb
+/usr/bin/ruby2.3 -r ./siteconf20171217-3930-moj5jk.rb extconf.rb
 /usr/lib/ruby/2.3.0/mkmf.rb:1547: warning: Insecure world writable dir /mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common in PATH, mode 040777
 checking for ffi.h... no
 checking for ffi.h in /usr/local/include,/usr/include/ffi... no
