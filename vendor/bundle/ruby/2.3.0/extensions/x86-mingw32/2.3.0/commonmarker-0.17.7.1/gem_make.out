@@ -1,0 +1,190 @@
+current directory: C:/Users/jsmith/Documents/GitHub/jtsmith24.github.io/vendor/bundle/ruby/2.3.0/gems/commonmarker-0.17.7.1/ext/commonmarker
+C:/Ruby23/bin/ruby.exe -r ./siteconf20171218-19796-1pj5p75.rb extconf.rb
+creating Makefile
+
+current directory: C:/Users/jsmith/Documents/GitHub/jtsmith24.github.io/vendor/bundle/ruby/2.3.0/gems/commonmarker-0.17.7.1/ext/commonmarker
+make "DESTDIR=" clean
+
+current directory: C:/Users/jsmith/Documents/GitHub/jtsmith24.github.io/vendor/bundle/ruby/2.3.0/gems/commonmarker-0.17.7.1/ext/commonmarker
+make "DESTDIR="
+generating commonmarker-i386-mingw32.def
+compiling arena.c
+arena.c: In function 'cmark_arena_pop':
+arena.c:38:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+arena.c: In function 'cmark_arena_reset':
+arena.c:54:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+arena.c: In function 'arena_calloc':
+arena.c:64:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+arena.c:78:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+arena.c: In function 'arena_realloc':
+arena.c:88:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+compiling autolink.c
+autolink.c: In function 'www_match':
+autolink.c:178:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+autolink.c:186:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+autolink.c: In function 'url_match':
+autolink.c:239:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+autolink.c:245:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+autolink.c: In function 'postprocess_text':
+autolink.c:343:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+autolink.c:350:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+autolink.c:361:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+autolink.c: In function 'create_autolink_extension':
+autolink.c:415:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+compiling blocks.c
+blocks.c: In function 'cmark_parser_reset':
+blocks.c:118:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+blocks.c: In function 'finalize':
+blocks.c:281:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+blocks.c:313:7: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+blocks.c: In function 'add_child':
+blocks.c:378:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+blocks.c: In function 'process_footnotes':
+blocks.c:461:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+blocks.c:471:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+blocks.c:474:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+blocks.c:483:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+blocks.c: In function 'check_open_blocks':
+blocks.c:970:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+blocks.c: In function 'add_text_to_container':
+blocks.c:1254:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+blocks.c:1292:7: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+compiling buffer.c
+buffer.c: In function 'cmark_strbuf_grow':
+buffer.c:54:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+buffer.c: In function 'cmark_strbuf_strchr':
+buffer.c:173:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+buffer.c: In function 'cmark_strbuf_strrchr':
+buffer.c:187:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+compiling cmark.c
+compiling cmark_ctype.c
+compiling commonmark.c
+commonmark.c: In function 'S_render_node':
+commonmark.c:409:18: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+commonmark.c:411:18: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+commonmark.c:478:7: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+compiling commonmarker.c
+In file included from c:/Ruby23/include/ruby-2.3.0/ruby.h:33:0,
+                 from commonmarker.h:9,
+                 from commonmarker.c:1:
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:131:14: error: size of array 'ruby_check_sizeof_voidp' is negative
+In file included from c:/Ruby23/include/ruby-2.3.0/ruby.h:33:0,
+                 from commonmarker.h:9,
+                 from commonmarker.c:1:
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_obj_freeze_inline':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1360:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1361:2: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1362:6: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1362:27: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_data_object_get':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1400:13: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_data_object_make':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1414:5: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_data_typed_object_make':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1421:5: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_num2char_inline':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1587:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1587:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1587:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1587:41: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1587:41: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1587:41: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1588:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1588:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1588:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_class_of':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1949:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_type':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1966:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+In file included from c:/Ruby23/include/ruby-2.3.0/ruby.h:33:0,
+                 from commonmarker.h:9,
+                 from commonmarker.c:1:
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_clone_setup':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1997:56: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1998:33: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1999:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:1999:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_dup_setup':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2005:42: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2006:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2006:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_array_len':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2012:13: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2013:2: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2013:24: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_array_const_ptr':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2027:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2027:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2027:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_struct_len':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2034:13: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2035:2: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2035:26: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h: In function 'rb_struct_const_ptr':
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2041:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2041:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:2041:12: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+In file included from houdini.h:9:0,
+                 from commonmarker.c:3:
+config.h: At top level:
+config.h:8:0: warning: "HAVE_STDBOOL_H" redefined [enabled by default]
+In file included from c:/Ruby23/include/ruby-2.3.0/ruby/ruby.h:24:0,
+                 from c:/Ruby23/include/ruby-2.3.0/ruby.h:33,
+                 from commonmarker.h:9,
+                 from commonmarker.c:1:
+C:/Ruby23/include/ruby-2.3.0/i386-mingw32/ruby/config.h:30:0: note: this is the location of the previous definition
+commonmarker.c: In function 'rb_mark_c_struct':
+commonmarker.c:64:16: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+commonmarker.c:73:18: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+commonmarker.c: In function 'rb_node_to_value':
+commonmarker.c:93:12: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+commonmarker.c:98:34: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c: In function 'rb_parent_added':
+commonmarker.c:105:42: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c: In function 'rb_parent_removed':
+commonmarker.c:108:3: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c: In function 'prepare_parser':
+commonmarker.c:123:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+commonmarker.c:127:10: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:133:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+commonmarker.c: In function 'rb_markdown_to_html':
+commonmarker.c:162:17: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:162:17: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:162:17: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:163:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:163:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:163:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:172:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+commonmarker.c:176:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+commonmarker.c: In function 'rb_parse_document':
+commonmarker.c:279:18: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:279:18: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:279:18: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:270:12: warning: variable 'options' set but not used [-Wunused-but-set-variable]
+commonmarker.c: In function 'rb_render_html':
+commonmarker.c:545:10: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:550:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+commonmarker.c:561:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+commonmarker.c: In function 'rb_render_commonmark':
+commonmarker.c:582:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+commonmarker.c: In function 'rb_render_plaintext':
+commonmarker.c:601:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+commonmarker.c: In function 'rb_html_escape_href':
+commonmarker.c:1055:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+commonmarker.c:1058:50: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:1058:50: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:1058:50: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:1059:27: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:1059:27: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:1059:27: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c: In function 'rb_html_escape_html':
+commonmarker.c:1075:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+commonmarker.c:1078:51: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:1078:51: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:1078:51: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:1079:28: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:1079:28: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+commonmarker.c:1079:28: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+make: *** [commonmarker.o] Error 1
+
+make failed, exit code 2

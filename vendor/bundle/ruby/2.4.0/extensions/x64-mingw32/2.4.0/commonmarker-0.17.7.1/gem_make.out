@@ -1,0 +1,15 @@
+current directory: C:/Users/jsmith/Documents/GitHub/jtsmith24.github.io/vendor/bundle/ruby/2.4.0/gems/commonmarker-0.17.7.1/ext/commonmarker
+C:/tools/ruby24/bin/ruby.exe -r ./siteconf20171218-15460-198iey3.rb extconf.rb
+creating Makefile
+
+current directory: C:/Users/jsmith/Documents/GitHub/jtsmith24.github.io/vendor/bundle/ruby/2.4.0/gems/commonmarker-0.17.7.1/ext/commonmarker
+make "DESTDIR=" clean
+MAKE Version 5.2  Copyright (c) 1987, 2000 Borland
+Fatal makefile 268: No terminator specified for in-line file operator
+
+current directory: C:/Users/jsmith/Documents/GitHub/jtsmith24.github.io/vendor/bundle/ruby/2.4.0/gems/commonmarker-0.17.7.1/ext/commonmarker
+make "DESTDIR="
+MAKE Version 5.2  Copyright (c) 1987, 2000 Borland
+Fatal makefile 268: No terminator specified for in-line file operator
+
+make failed, exit code 1
