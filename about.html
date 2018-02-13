@@ -34,9 +34,16 @@ title: About
 				{% for resume_item in site.resume %}
 				<div class="row resume-category col-sm-12"> {{resume_item.category}} </div>
 				<div class="row resume-header">
-					<div class="col-sm-4"><a href="{{resume_item.company_link}}" target="_blank">{{ resume_item.company_name }}</a>
+					<div class="col-sm-4">
+						{% if resume_item.company_link != "none" %}
+						<a href="{{resume_item.company_link}}" target="_blank">{{ resume_item.company_name }}</a>
+						{% else %}
+						{{ resume_item.company_name }}
+						{% endif %}
+						
 						{% if resume_item.location %}
-						- {{ resume_item.location}} 
+						- 
+						{{ resume_item.location}} 
 					{% endif %}
 					</div>
 					<div class="col-sm-4">{{ resume_item.job_title }}</div>

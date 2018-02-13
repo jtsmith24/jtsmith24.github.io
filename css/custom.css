@@ -131,7 +131,6 @@ ul.postlist {
 }
 
 div.postlist, div.content>.postlist {
-    width: 50em;
     display: block;
 }
 /*END Blog Styles*/
