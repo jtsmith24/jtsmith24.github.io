@@ -1,0 +1,58 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import Recipes from "@layouts/Recipes.astro";
+import PostDetails from "@layouts/PostDetails.astro";
+import getPageNumbers from "@utils/getPageNumbers";
+import slugify from "@utils/slugify";
+import { SITE } from "@config";
+import getSortedRecipes from "@utils/getSortedRecipes";
+
+export interface Props {
+  recipes: CollectionEntry<"recipes">;
+}
+
+export async function getStaticPaths() {
+  const recipes = await getCollection("recipes", ({ data }) => !data.draft);
+
+  const postResult = recipes.map(recipe => ({
+    params: { slug: slugify(recipe.data) },
+    props: { recipe },
+  }));
+
+  const pagePaths = getPageNumbers(recipes.length).map(pageNum => ({
+    params: { slug: String(pageNum) },
+  }));
+
+  return [...postResult, ...pagePaths];
+}
+
+const { slug } = Astro.params;
+const { recipe } = Astro.props;
+
+const recipes = await getCollection("recipes");
+
+const sortedRecipes = getSortedRecipes(recipes);
+
+const totalPages = getPageNumbers(sortedRecipes.length);
+
+const currentPage =
+  slug && !isNaN(Number(slug)) && totalPages.includes(Number(slug))
+    ? Number(slug)
+    : 0;
+const lastRecipe = currentPage * SITE.postPerPage;
+const startRecipe = lastRecipe - SITE.postPerPage;
+
+const paginatedRecipes = sortedRecipes.slice(startRecipe, lastRecipe);
+---
+
+{
+  recipe ? (
+    <PostDetails post={recipe} />
+  ) : (
+    <Recipes
+      recipes={paginatedRecipes}
+      pageNum={currentPage}
+      totalPages={totalPages.length}
+    />
+  )
+}
