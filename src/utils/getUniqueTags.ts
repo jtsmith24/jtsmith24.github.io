@@ -1,11 +1,11 @@
 import { slugifyStr } from "./slugify";
 import type { CollectionEntry } from "astro:content";
 
-const getUniqueTags = (posts: CollectionEntry<"blog">[]) => {
+const getUniqueTags = (entry: CollectionEntry<any>[]) => {
   let tags: string[] = [];
-  const filteredPosts = posts.filter(({ data }) => !data.draft);
-  filteredPosts.forEach(post => {
-    tags = [...tags, ...post.data.tags]
+  const filteredPosts = entry.filter(({ data }) => !data.draft);
+  filteredPosts.forEach(entry => {
+    tags = [...tags, ...entry.data.tags]
       .map(tag => slugifyStr(tag))
       .filter(
         (value: string, index: number, self: string[]) =>

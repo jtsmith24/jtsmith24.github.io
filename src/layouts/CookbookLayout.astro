@@ -12,22 +12,22 @@ import type { CollectionEntry } from "astro:content";
 export interface Props {
   pageNum: number;
   totalPages: number;
-  posts: CollectionEntry<"blog">[];
+  recipes: CollectionEntry<"recipes">[];
 }
 
-const { pageNum, totalPages, posts } = Astro.props;
+const { pageNum, totalPages, recipes } = Astro.props;
 
 const prev = pageNum > 1 ? "" : "disabled";
 const next = pageNum < totalPages ? "" : "disabled";
 ---
 
-<Layout title={`Posts | ${SITE.title}`}>
-  <Header activeNav="posts" />
-  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
+<Layout title={`recipes | ${SITE.title}`}>
+  <Header activeNav="cookbook" />
+  <Main pageTitle="Recipes">
     <ul>
       {
-        posts.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+        recipes.map(({ data }) => (
+          <Card href={`/cookbook/${slugify(data)}`} frontmatter={data} />
         ))
       }
     </ul>

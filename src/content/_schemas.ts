@@ -1,6 +1,6 @@
 import { z } from "astro:content";
 
-export const blogSchema = z
+export const recipeSchema = z
   .object({
     author: z.string().optional(),
     pubDatetime: z.date(),
@@ -14,4 +14,4 @@ export const blogSchema = z
   })
   .strict();
 
-export type BlogFrontmatter = z.infer<typeof blogSchema>;
+export type RecipeFrontmatter = z.infer<typeof recipeSchema>;

@@ -7,14 +7,14 @@ import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
-  post: CollectionEntry<"blog">;
+  recipe: CollectionEntry<"recipes">;
 }
 
-const { post } = Astro.props;
+const { recipe } = Astro.props;
 
-const { title, author, description, ogImage, pubDatetime, tags } = post.data;
+const { title, author, description, ogImage, pubDatetime, tags } = recipe.data;
 
-const { Content } = await post.render();
+const { Content } = await recipe.render();
 
 const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
   .href;

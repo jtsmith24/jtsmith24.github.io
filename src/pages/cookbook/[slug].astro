@@ -1,7 +1,7 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-import Recipes from "@layouts/Recipes.astro";
-import PostDetails from "@layouts/PostDetails.astro";
+import Cookbook from "@layouts/CookbookLayout.astro";
+import RecipeDetails from "@layouts/RecipeDetails.astro";
 import getPageNumbers from "@utils/getPageNumbers";
 import slugify from "@utils/slugify";
 import { SITE } from "@config";
@@ -47,9 +47,9 @@ const paginatedRecipes = sortedRecipes.slice(startRecipe, lastRecipe);
 
 {
   recipe ? (
-    <PostDetails post={recipe} />
+    <RecipeDetails recipe={recipe} />
   ) : (
-    <Recipes
+    <Cookbook
       recipes={paginatedRecipes}
       pageNum={currentPage}
       totalPages={totalPages.length}
