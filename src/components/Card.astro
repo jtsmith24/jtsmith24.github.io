@@ -1,0 +1,55 @@
+---
+import { RecipeFrontmatter } from "@content/_schemas";
+import Datetime from "./Datetime";
+
+export interface Props {
+  href?: string;
+  frontmatter: RecipeFrontmatter;
+  secHeading?: boolean;
+}
+
+const { frontmatter, href, secHeading } = Astro.props;
+const { title, pubDatetime, description, tags } = frontmatter;
+---
+
+<li class="my-6">
+  <a
+    href={href}
+    class="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+  >
+    {
+      secHeading ? (
+        <h2 class="text-lg font-medium decoration-dashed hover:underline">
+          {title}
+        </h2>
+      ) : (
+        <h3 class="text-lg font-medium decoration-dashed hover:underline">
+          {title}
+        </h3>
+      )
+    }
+  </a>
+  {pubDatetime && <Datetime datetime={pubDatetime} />}
+  <p>{description}</p>
+  {
+    tags && (
+      <ul class="flex flex-wrap gap-2">
+        {tags.map(tag => (
+          <li>
+            <a
+              href={`/tags/${tag}`}
+              class="inline-block px-2 py-1 text-xs font-medium underline decoration-dashed"
+            >
+              #{tag}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</li>
+<style>
+  a.decoration-dashed {
+    @apply hover:-top-0.5 hover:text-skin-accent focus-visible:p-1;
+  }
+</style>

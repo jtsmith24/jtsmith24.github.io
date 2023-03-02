@@ -4,9 +4,10 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
-import Card from "@components/Card";
+import Card from "@components/Card.astro";
 import slugify from "@utils/slugify";
 import getSortedRecipes from "@utils/getSortedRecipes";
+import Hr from "@components/Hr.astro";
 
 const recipes = await getCollection("recipes");
 
@@ -28,11 +29,14 @@ const pinnedRecipes = sortedRecipes.filter(({ data }) => data.pinned);
           pinnedRecipes.map(
             ({ data }, index) =>
               index < 4 && (
-                <Card
-                  href={`/cookbook/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
+                <>
+                  <Card
+                    href={`/cookbook/${slugify(data)}`}
+                    frontmatter={data}
+                    secHeading={false}
+                  />
+                  <Hr noPadding={true} className="pr-lg" />
+                </>
               )
           )
         }

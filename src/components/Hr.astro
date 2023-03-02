@@ -2,11 +2,21 @@
 export interface Props {
   noPadding?: boolean;
   ariaHidden?: boolean;
+  className?: string;
 }
 
-const { noPadding = false, ariaHidden = true } = Astro.props;
+const { noPadding = false, ariaHidden = true, className = "" } = Astro.props;
 ---
 
-<div class={`max-w-3xl mx-auto ${noPadding ? "px-0" : "px-4"}`}>
+<div
+  class={`max-w-3xl mx-auto ${noPadding ? "px-0" : "px-4"} ${
+    className ? className : ""
+  }`}
+>
   <hr class="border-skin-line" aria-hidden={ariaHidden} />
 </div>
+<style>
+  .pr-lg {
+    padding-right: 10rem;
+  }
+</style>

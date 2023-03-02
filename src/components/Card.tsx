@@ -1,9 +1,9 @@
 import Datetime from "./Datetime";
-import type { BlogFrontmatter } from "@content/_schemas";
+import type { RecipeFrontmatter } from "@content/_schemas";
 
 export interface Props {
   href?: string;
-  frontmatter: BlogFrontmatter;
+  frontmatter: RecipeFrontmatter;
   secHeading?: boolean;
 }
 
@@ -25,7 +25,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
           </h3>
         )}
       </a>
-      <Datetime datetime={pubDatetime} />
+      {pubDatetime && <Datetime datetime={pubDatetime} />}
       <p>{description}</p>
     </li>
   );

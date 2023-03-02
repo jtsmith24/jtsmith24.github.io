@@ -4,10 +4,11 @@ import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import Card from "@components/Card";
+import Card from "@components/Card.astro";
 import LinkButton from "@components/LinkButton.astro";
 import slugify from "@utils/slugify";
 import type { CollectionEntry } from "astro:content";
+import Hr from "@components/Hr.astro";
 
 export interface Props {
   pageNum: number;
@@ -27,7 +28,10 @@ const next = pageNum < totalPages ? "" : "disabled";
     <ul>
       {
         recipes.map(({ data }) => (
-          <Card href={`/cookbook/${slugify(data)}`} frontmatter={data} />
+          <>
+            <Card href={`/cookbook/${slugify(data)}`} frontmatter={data} />
+            <Hr noPadding={true} className="pr-lg" />
+          </>
         ))
       }
     </ul>

@@ -3,7 +3,7 @@ import { z } from "astro:content";
 export const recipeSchema = z
   .object({
     author: z.string().optional(),
-    pubDatetime: z.date(),
+    pubDatetime: z.date().optional(),
     title: z.string(),
     postSlug: z.string().optional(),
     pinned: z.boolean().optional(),

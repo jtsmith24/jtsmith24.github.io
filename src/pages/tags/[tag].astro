@@ -4,11 +4,12 @@ import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import Card from "@components/Card";
+import Card from "@components/Card.astro";
 import getUniqueTags from "@utils/getUniqueTags";
 import slugify from "@utils/slugify";
 import { SITE } from "@config";
 import getRecipesBytag from "@utils/getRecipesByTag";
+import Hr from "@components/Hr.astro";
 
 export interface Props {
   post: CollectionEntry<"recipes">;
@@ -44,7 +45,10 @@ const tagRecipes = getRecipesBytag(recipes, tag);
     <ul>
       {
         tagRecipes.map(({ data }) => (
-          <Card href={`/cookbook/${slugify(data)}`} frontmatter={data} />
+          <>
+            <Card href={`/cookbook/${slugify(data)}`} frontmatter={data} />
+            <Hr noPadding={true} className="pr-lg" />
+          </>
         ))
       }
     </ul>
