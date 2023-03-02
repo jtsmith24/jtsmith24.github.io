@@ -8,7 +8,7 @@ tags:
   - recipe
   - breakfast
 ogImage: ""
-description: How to make steel cut oats in a rice cooker
+description: Easy breakfast made in a rice cooker
 ---
 
 ### Ingredients
