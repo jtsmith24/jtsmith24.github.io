@@ -4,7 +4,6 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
-import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
 import slugify from "@utils/slugify";
 import getSortedRecipes from "@utils/getSortedRecipes";
@@ -12,7 +11,7 @@ import getSortedRecipes from "@utils/getSortedRecipes";
 const recipes = await getCollection("recipes");
 
 const sortedRecipes = getSortedRecipes(recipes);
-const featuredRecipes = sortedRecipes.filter(({ data }) => data.featured);
+const pinnedRecipes = sortedRecipes.filter(({ data }) => data.pinned);
 ---
 
 <Layout>
@@ -20,35 +19,13 @@ const featuredRecipes = sortedRecipes.filter(({ data }) => data.featured);
   <main id="main-content">
     <section id="hero">
       <h1>Hi &#x1F44B;</h1>
-      <p>Just recipes for now.</p>
-      <p>More later if I'm not feeling lazy.</p>
     </section>
 
     <section id="featured">
-      <h2>Featured</h2>
+      <h2>Recipes</h2>
       <ul>
         {
-          featuredRecipes.map(
-            ({ data }, index) =>
-              index < 4 && (
-                <Card
-                  href={`/cookbook/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              )
-          )
-        }
-      </ul>
-    </section>
-
-    <Hr />
-
-    <section id="recent-posts">
-      <h2>Recent</h2>
-      <ul>
-        {
-          sortedRecipes.map(
+          pinnedRecipes.map(
             ({ data }, index) =>
               index < 4 && (
                 <Card

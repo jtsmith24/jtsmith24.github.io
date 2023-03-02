@@ -3,7 +3,7 @@ author: Jordan Smith
 pubDatetime: 2023-03-02
 title: Sweet Steel Cut Oats
 postSlug: sweet-steel-cut-oats
-featured: true
+pinned: true
 draft: false
 tags:
   - recipe

@@ -6,7 +6,7 @@ export const recipeSchema = z
     pubDatetime: z.date(),
     title: z.string(),
     postSlug: z.string().optional(),
-    featured: z.boolean().optional(),
+    pinned: z.boolean().optional(),
     draft: z.boolean().optional(),
     tags: z.array(z.string()).default(["others"]),
     ogImage: z.string().optional(),
