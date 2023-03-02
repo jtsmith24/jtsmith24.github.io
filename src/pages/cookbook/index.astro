@@ -1,0 +1,21 @@
+---
+import { SITE } from "@config";
+import getPageNumbers from "@utils/getPageNumbers";
+import { getCollection } from "astro:content";
+import Cookbook from "@layouts/CookbookLayout.astro";
+import getSortedRecipes from "@utils/getSortedRecipes";
+
+const recipes = await getCollection("recipes");
+
+const sortedRecipes = getSortedRecipes(recipes);
+
+const totalPages = getPageNumbers(sortedRecipes.length);
+
+const paginatedRecipes = sortedRecipes.slice(0, SITE.postPerPage);
+---
+
+<Cookbook
+  recipes={paginatedRecipes}
+  pageNum={1}
+  totalPages={totalPages.length}
+/>
