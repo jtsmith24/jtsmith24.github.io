@@ -72,11 +72,6 @@
   .prose a {
     @apply hover:!text-skin-accent;
   }
-  .prose thead th:first-child,
-  tbody td:first-child,
-  tfoot td:first-child {
-    padding-left: 0.5714286em;
-  }
   .prose h2#table-of-contents {
     @apply mb-2;
   }

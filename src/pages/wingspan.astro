@@ -1,0 +1,35 @@
+---
+import { SITE } from "@config";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import SumTable from "@components/SumTable";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+const inputColumns = 6;
+const inputRows = 6;
+const rowHeaders = [
+  { full: "Birds", icon: "fas fa-feather", color: "text-green-500" },
+  { full: "Bonus Cards", icon: "fas fa-b", color: "text-green-500" },
+  {
+    full: "End-Of-Round Goals",
+    icon: "fas fa-flag-checkered",
+    color: "text-green-500",
+  },
+  { full: "Eggs", icon: "fas fa-egg", color: "text-blue-500" },
+  { full: "Food On Cards", icon: "fas fa-wheat-awn", color: "text-blue-500" },
+  { full: "Tucked Cards", icon: "fas fa-layer-group", color: "text-blue-500" },
+];
+---
+
+<Layout title={`Wingspan | ${SITE.title}`}>
+  <Header activeNav="wingspan" />
+  <Main pageTitle="Wingspan Score Sheet">
+    <SumTable
+      client:load
+      rowHeaders={rowHeaders}
+      columns={inputColumns}
+      rows={inputRows}
+    />
+  </Main>
+  <Footer />
+</Layout>
