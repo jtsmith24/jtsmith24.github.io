@@ -10,15 +10,15 @@ const SumTable = ({
   rows: number;
   rowHeaders: Array<{ full: string; icon: string; color: string }>;
 }) => {
-  //Todo: Separate different tables into different components
+  //Todo: Separate into different components
   //Todo: Add a button to clear all data
   //Todo: Add a button to set how many players there are
   //Todo: Make more generic so that it can be used for other things
   //Todo: Make more responsive
   //Todo: Clean up styling
   //Todo: Use arrows to navigate between inputs
-  //Todo: All caps and limit header input to 3 characters
-  //Todo: Rethink how to display row headers
+  //Todo: Fix enter not working on mobile
+  //Todo: Focus cursor all the way to the right when entering a number
 
   const [tableData, setTableData] = useState(
     Array.from({ length: rows }, () => Array(columns).fill(""))
@@ -143,9 +143,11 @@ const SumTable = ({
                 >
                   <input
                     className="custom-number-input w-full text-center text-black sm:text-sm"
-                    type="number"
+                    type="text"
                     value={cellValue}
                     onChange={e => handleInputChange(e, rowIndex, colIndex)}
+                    pattern="\d*"
+                    inputMode="numeric"
                     min={0}
                     max={999}
                     step={1}
