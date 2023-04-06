@@ -24,10 +24,7 @@ const SumTable = ({
     Array.from({ length: rows }, () => Array(columns).fill(""))
   );
   const [headerData, setHeaderData] = useState(Array(columns).fill(""));
-  const [onChangeCount, setOnChangeCount] = useState(0);
-
   const handleInputChange = (e: any, rowIndex: number, colIndex: number) => {
-    setOnChangeCount(prev => prev + 1);
     if (!validateNumberInput(e.target.value)) return;
     const newTableData = [...tableData];
     newTableData[rowIndex][colIndex] = e.target.value;
@@ -102,7 +99,7 @@ const SumTable = ({
         <div className="h-12"></div>
       </div>
       <div className="divide-y divide-gray-200 bg-white">
-        <div className="h-12">{onChangeCount}</div>
+        <div className="h-12"></div>
         {rowHeaders.map((header, colIndex) => (
           <div
             key={colIndex}
