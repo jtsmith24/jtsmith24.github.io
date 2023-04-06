@@ -59,7 +59,7 @@ const SumTable = ({
     colIndex: number,
     isHeaderRow: boolean
   ) => {
-    if (e.code === "Enter") {
+    if (e.code === "Enter" || e.key === "Enter") {
       e.preventDefault();
       const nextRowIndex = isHeaderRow ? 0 : rowIndex + 1;
       if (nextRowIndex < tableData.length) {
