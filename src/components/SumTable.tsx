@@ -24,6 +24,7 @@ const SumTable = ({
     Array.from({ length: rows }, () => Array(columns).fill(""))
   );
   const [headerData, setHeaderData] = useState(Array(columns).fill(""));
+  const [keyDownKeyCode, setKeyDownKeyCode] = useState(0);
 
   const handleInputChange = (e: any, rowIndex: number, colIndex: number) => {
     if (!validateNumberInput(e.target.value)) return;
@@ -61,6 +62,7 @@ const SumTable = ({
   ) => {
     const isMobileScreen = window.innerWidth < 640; // Breakpoint for 'sm'
 
+    setKeyDownKeyCode(e.keyCode);
     if (
       e.code === "Enter" ||
       e.key === "Enter" ||
@@ -106,7 +108,11 @@ const SumTable = ({
         <div className="h-12"></div>
       </div>
       <div className="divide-y divide-gray-200 bg-white">
-        <div className="h-12"></div>
+        <div className="h-12">
+          <div className="flex h-12 items-center justify-center">
+            {keyDownKeyCode}
+          </div>
+        </div>
         {rowHeaders.map((header, colIndex) => (
           <div
             key={colIndex}
