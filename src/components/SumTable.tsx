@@ -17,6 +17,8 @@ const SumTable = ({
   //Todo: Make more responsive
   //Todo: Clean up styling
   //Todo: Use arrows to navigate between inputs
+  //Todo: All caps and limit header input to 3 characters
+  //Todo: Rethink how to display row headers
 
   const [tableData, setTableData] = useState(
     Array.from({ length: rows }, () => Array(columns).fill(""))
@@ -51,6 +53,26 @@ const SumTable = ({
     return false;
   };
 
+  const handleTableKeyDown = (
+    e: any,
+    rowIndex: number,
+    colIndex: number,
+    isHeaderRow: boolean
+  ) => {
+    if (e.code === "Enter") {
+      e.preventDefault();
+      const nextRowIndex = isHeaderRow ? 0 : rowIndex + 1;
+      if (nextRowIndex < tableData.length) {
+        const nextInput = document.querySelector(
+          `#input-${colIndex}-${nextRowIndex}`
+        ) as HTMLInputElement;
+        if (nextInput) {
+          nextInput.focus();
+        }
+      }
+    }
+  };
+
   return (
     <div className="flex text-center text-sm text-black sm:text-lg">
       <div className="divide-y divide-gray-200 bg-white text-xs">
@@ -82,25 +104,19 @@ const SumTable = ({
         {rowHeaders.map((header, colIndex) => (
           <div
             key={colIndex}
-            className="flex h-12 items-center justify-center p-2 sm:whitespace-nowrap"
+            className="flex h-12 items-center justify-center overflow-hidden p-2 sm:whitespace-nowrap"
           >
-            <span className="hidden sm:inline-block">{header.full}</span>
-            <i
-              className={`${header.icon} sm:hidden ${header.color}`}
-              aria-hidden="true"
-            ></i>
+            <span className="text-xs sm:inline-block">{header.full}</span>
           </div>
         ))}
-        <div className="flex h-12 items-center justify-center overflow-hidden">
-          <span className="hidden w-full text-center text-sm sm:inline-block sm:text-base">
-            Total
-          </span>
-          <span className="inline-block w-full text-center text-sm sm:hidden sm:text-base">
-            T
-          </span>
+        <div className="flex h-12 items-center justify-center overflow-hidden text-xs">
+          Total
         </div>
       </div>
-      <table className="w-full table-auto divide-y divide-gray-200 border bg-white text-center">
+      <table
+        id="sum-table"
+        className="w-full table-auto divide-y divide-gray-200 border bg-white text-center"
+      >
         <thead className="text-gray-900">
           <tr className="divide-x">
             {headerData.map((headerValue, colIndex) => (
@@ -110,20 +126,7 @@ const SumTable = ({
                   type="text"
                   value={headerValue}
                   onChange={e => handleHeaderChange(e, colIndex)}
-                  onKeyDown={e => {
-                    if (e.code === "Enter") {
-                      //nextRowIndex always 0 because we are in the header, table inputs start at 0
-                      const nextRowIndex = 0;
-                      if (nextRowIndex < tableData.length) {
-                        const nextInput = document.querySelector(
-                          `#input-${colIndex}-${nextRowIndex}`
-                        ) as HTMLInputElement;
-                        if (nextInput) {
-                          nextInput.focus();
-                        }
-                      }
-                    }
-                  }}
+                  onKeyDown={e => handleTableKeyDown(e, 0, colIndex, true)}
                   id={`header-${colIndex}-0`}
                 />
               </th>
@@ -146,19 +149,9 @@ const SumTable = ({
                     min={0}
                     max={999}
                     step={1}
-                    onKeyDown={e => {
-                      if (e.code === "Enter") {
-                        const nextRowIndex = rowIndex + 1;
-                        if (nextRowIndex < tableData.length) {
-                          const nextInput = document.querySelector(
-                            `#input-${colIndex}-${nextRowIndex}`
-                          ) as HTMLInputElement;
-                          if (nextInput) {
-                            nextInput.focus();
-                          }
-                        }
-                      }
-                    }}
+                    onKeyDown={e =>
+                      handleTableKeyDown(e, rowIndex, colIndex, false)
+                    }
                     id={`input-${colIndex}-${rowIndex}`}
                   />
                 </td>
