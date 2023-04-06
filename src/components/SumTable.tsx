@@ -59,9 +59,7 @@ const SumTable = ({
     colIndex: number,
     isHeaderRow: boolean
   ) => {
-    const isMobileScreen = window.innerWidth < 640; // Breakpoint for 'sm'
-
-    if (e.code === "Enter" || e.key === "Enter" || isMobileScreen) {
+    if (e.code === "Enter" || e.key === "Enter") {
       e.preventDefault();
       const nextRowIndex = isHeaderRow ? 0 : rowIndex + 1;
       if (nextRowIndex < tableData.length) {
