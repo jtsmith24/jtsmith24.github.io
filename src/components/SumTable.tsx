@@ -18,7 +18,6 @@ const SumTable = ({
   //Todo: Clean up styling
   //Todo: Use arrows to navigate between inputs
   //Todo: Fix enter not working on mobile
-  //Todo: Focus cursor all the way to the right when entering a number
 
   const [tableData, setTableData] = useState(
     Array.from({ length: rows }, () => Array(columns).fill(""))
