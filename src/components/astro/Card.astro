@@ -1,6 +1,6 @@
 ---
-import { RecipeFrontmatter } from "@content/_schemas";
-import Datetime from "./Datetime";
+import type { RecipeFrontmatter } from "@content/_schemas";
+import Datetime from "../react/Datetime";
 
 export interface Props {
   href?: string;
@@ -53,3 +53,4 @@ const { title, pubDatetime, description, tags } = frontmatter;
     @apply hover:-top-0.5 hover:text-skin-accent focus-visible:p-1;
   }
 </style>
+../react/Datetime

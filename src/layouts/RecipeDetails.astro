@@ -1,9 +1,9 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import Tag from "@components/Tag.astro";
-import Datetime from "@components/Datetime";
+import Header from "@components/astro/Header.astro";
+import Footer from "@components/astro/Footer.astro";
+import Tag from "@components/astro/Tag.astro";
+import Datetime from "@components/react/Datetime";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
@@ -46,7 +46,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
     </article>
 
     <ul class="tags-container">
-      {tags.map(tag => <Tag name={tag} />)}
+      {tags.map((tag: string) => <Tag name={tag} />)}
     </ul>
   </main>
   <Footer />

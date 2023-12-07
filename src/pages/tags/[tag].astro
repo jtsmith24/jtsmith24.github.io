@@ -2,14 +2,14 @@
 import { CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import Card from "@components/Card.astro";
+import Header from "@components/astro/Header.astro";
+import Footer from "@components/astro/Footer.astro";
+import Card from "@components/astro/Card.astro";
 import getUniqueTags from "@utils/getUniqueTags";
 import slugify from "@utils/slugify";
 import { SITE } from "@config";
 import getRecipesBytag from "@utils/getRecipesByTag";
-import Hr from "@components/Hr.astro";
+import Hr from "@components/astro/Hr.astro";
 
 export interface Props {
   post: CollectionEntry<"recipes">;

@@ -1,8 +1,9 @@
 import Fuse from "fuse.js";
 import { useEffect, useRef, useState } from "react";
-import Card from "@components/Card";
+import Card from "@components/react/Card";
 import slugify from "@utils/slugify";
 import type { RecipeFrontmatter } from "@content/_schemas";
+import React from "react";
 
 export type SearchItem = {
   title: string;

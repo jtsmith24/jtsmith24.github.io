@@ -25,18 +25,6 @@ export const SOCIALS: SocialObjects = [
     active: false,
   },
   {
-    name: "Facebook",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Facebook`,
-    active: false,
-  },
-  {
-    name: "Instagram",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Instagram`,
-    active: false,
-  },
-  {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/jordan-smith-nashdev/",
     linkTitle: `${SITE.title} on LinkedIn`,
@@ -52,12 +40,6 @@ export const SOCIALS: SocialObjects = [
     name: "Twitter",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Twitter`,
-    active: false,
-  },
-  {
-    name: "Twitch",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Twitch`,
     active: false,
   },
   {

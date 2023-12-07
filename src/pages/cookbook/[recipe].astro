@@ -15,7 +15,7 @@ export async function getStaticPaths() {
   const recipes = await getCollection("recipes", ({ data }) => !data.draft);
 
   const postResult = recipes.map(recipe => ({
-    params: { slug: slugify(recipe.data) },
+    params: { recipe: slugify(recipe.data) },
     props: { recipe },
   }));
 
@@ -26,18 +26,18 @@ export async function getStaticPaths() {
   return [...postResult, ...pagePaths];
 }
 
-const { slug } = Astro.params;
+const { recipeSlug } = Astro.params;
 const { recipe } = Astro.props;
 
 const recipes = await getCollection("recipes");
-
 const sortedRecipes = getSortedRecipes(recipes);
-
 const totalPages = getPageNumbers(sortedRecipes.length);
 
 const currentPage =
-  slug && !isNaN(Number(slug)) && totalPages.includes(Number(slug))
-    ? Number(slug)
+  recipeSlug &&
+  !isNaN(Number(recipeSlug)) &&
+  totalPages.includes(Number(recipeSlug))
+    ? Number(recipeSlug)
     : 0;
 const lastRecipe = currentPage * SITE.postPerPage;
 const startRecipe = lastRecipe - SITE.postPerPage;
