@@ -1,5 +1,6 @@
 import Datetime from "../react/Datetime";
 import type { RecipeFrontmatter } from "@content/_schemas";
+import React from "react";
 
 export interface Props {
   href?: string;
