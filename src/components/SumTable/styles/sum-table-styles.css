@@ -1,0 +1,21 @@
+.custom-number-input::-webkit-inner-spin-button,
+.custom-number-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.settings-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

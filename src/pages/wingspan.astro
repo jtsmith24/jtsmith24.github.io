@@ -2,11 +2,11 @@
 import { SITE } from "@config";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import SumTable from "@components/SumTable";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
-const inputColumns = 6;
-const inputRows = 6;
+import Scoresheet from "@components/Scoresheet";
+const inputColumnAmount = 2;
+const inputRowAmount = 6;
 const rowHeaders = [
   { full: "Birds", icon: "fas fa-feather", color: "text-green-500" },
   { full: "Bonus Cards", icon: "fas fa-b", color: "text-green-500" },
@@ -24,11 +24,11 @@ const rowHeaders = [
 <Layout title={`Wingspan | ${SITE.title}`}>
   <Header activeNav="wingspan" />
   <Main pageTitle="Wingspan Score Sheet">
-    <SumTable
+    <Scoresheet
       client:load
+      inputColumnAmount={inputColumnAmount}
+      inputRowAmount={inputRowAmount}
       rowHeaders={rowHeaders}
-      columns={inputColumns}
-      rows={inputRows}
     />
   </Main>
   <Footer />
