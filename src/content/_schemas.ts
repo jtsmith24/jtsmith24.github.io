@@ -5,7 +5,6 @@ export const recipeSchema = z
     author: z.string().optional(),
     pubDatetime: z.date().optional(),
     title: z.string(),
-    postSlug: z.string().optional(),
     pinned: z.boolean().optional(),
     draft: z.boolean().optional(),
     tags: z.array(z.string()).default(["others"]),

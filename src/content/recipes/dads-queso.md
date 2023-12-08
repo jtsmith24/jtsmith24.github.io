@@ -1,7 +1,6 @@
 ---
-author: Jordan Smith
-title: Dad's Queso
-postSlug: dads-queso
+author: "Jordan Smith"
+title: "Dad's Queso"
 pinned: true
 draft: false
 tags:

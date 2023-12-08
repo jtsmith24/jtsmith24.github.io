@@ -1,7 +1,6 @@
 ---
-author: Jordan Smith
-title: Sweet Steel Cut Oats
-postSlug: sweet-steel-cut-oats
+author: "Jordan Smith"
+title: "Sweet Steel Cut Oats"
 pinned: true
 draft: false
 tags:

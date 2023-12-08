@@ -5,7 +5,6 @@ import Header from "@components/astro/Header.astro";
 import Footer from "@components/astro/Footer.astro";
 import LinkButton from "@components/astro/LinkButton.astro";
 import Card from "@components/astro/Card.astro";
-import slugify from "@utils/slugify";
 import getSortedRecipes from "@utils/getSortedRecipes";
 import Hr from "@components/astro/Hr.astro";
 
@@ -27,11 +26,11 @@ const pinnedRecipes = sortedRecipes.filter(({ data }) => data.pinned);
       <ul>
         {
           pinnedRecipes.map(
-            ({ data }, index) =>
+            ({ data, slug }, index) =>
               index < 4 && (
                 <>
                   <Card
-                    href={`/cookbook/${slugify(data)}`}
+                    href={`/cookbook/${slug}`}
                     frontmatter={data}
                     secHeading={false}
                   />
