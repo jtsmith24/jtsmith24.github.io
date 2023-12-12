@@ -88,6 +88,8 @@ const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href;
     ></script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
     ></script>
+  </head>
+  <body>
     <script>
       declare global {
         interface Window {
@@ -104,8 +106,6 @@ const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href;
         });
       }
     </script>
-  </head>
-  <body>
     <slot />
   </body>
 </html>
