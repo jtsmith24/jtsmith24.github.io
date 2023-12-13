@@ -1,0 +1,12 @@
+---
+import { SITE } from "@config";
+import { getCollection } from "astro:content";
+import Blog from "@layouts/BlogLayout.astro";
+
+const posts = await getCollection("blog");
+
+//Todo: const sortedRecipes = getSortedRecipes(recipes);
+//Todo: pagination
+---
+
+<Blog posts={posts} />

@@ -1,0 +1,35 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/astro/Header.astro";
+import Card from "@components/astro/Card.astro";
+import type { CollectionEntry } from "astro:content";
+import Hr from "@components/astro/Hr.astro";
+
+export interface Props {
+  posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<Layout title={`Posts | ${SITE.title}`}>
+  <Header activeNav="blog" />
+  <Main pageTitle="Blog">
+    {
+      posts.length === 0 ? (
+        <p>No posts yet.</p>
+      ) : (
+        <ul>
+          {posts.map(({ data, slug }: { data: any; slug: string }) => (
+            <>
+              <Card href={`/blog/${slug}`} frontmatter={data} />
+              <Hr noPadding={true} className="pr-lg" />
+            </>
+          ))}
+        </ul>
+      )
+    }
+  </Main>
+</Layout>

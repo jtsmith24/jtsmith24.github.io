@@ -7,10 +7,11 @@ import logoPNG from "/assets/logo.png";
 import logoSVG from "/assets/logo.svg";
 
 export interface Props {
-  activeNav?: "cookbook" | "tags" | "about" | "search" | "wingspan";
+  activeNav?: "blog" | "cookbook" | "tags" | "about" | "search" | "wingspan";
 }
 
 const { activeNav } = Astro.props;
+//Todo: Make nav items dynamic
 ---
 
 <header>
@@ -45,6 +46,11 @@ const { activeNav } = Astro.props;
           </div>
         </button>
         <ul id="menu-items" class="display-none sm:flex">
+          <li>
+            <a href="/blog" class={activeNav === "blog" ? "active" : ""}>
+              Blog
+            </a>
+          </li>
           <li>
             <a
               href="/cookbook"

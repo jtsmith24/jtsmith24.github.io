@@ -1,7 +1,7 @@
 import type { CollectionEntry } from "astro:content";
 
-const getSortedRecipes = (posts: CollectionEntry<"recipes">[]) =>
-  posts
+const getSortedRecipes = (recipes: CollectionEntry<"cookbook">[]) =>
+  recipes
     .filter(({ data }) => !data.draft)
     .sort(
       (a, b) =>

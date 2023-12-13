@@ -7,11 +7,11 @@ import { SITE } from "@config";
 import getSortedRecipes from "@utils/getSortedRecipes";
 
 export interface Props {
-  recipes: CollectionEntry<"recipes">;
+  recipes: CollectionEntry<"cookbook">;
 }
 
 export async function getStaticPaths() {
-  const recipes = await getCollection("recipes", ({ data }) => !data.draft);
+  const recipes = await getCollection("cookbook", ({ data }) => !data.draft);
 
   const recipeResult = recipes.map(recipe => ({
     params: { slug: recipe.slug },
@@ -28,7 +28,7 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const { recipe } = Astro.props;
 
-const recipes = await getCollection("recipes");
+const recipes = await getCollection("cookbook");
 const sortedRecipes = getSortedRecipes(recipes);
 const totalPages = getPageNumbers(sortedRecipes.length);
 

@@ -1,10 +1,10 @@
 ---
-import type { RecipeFrontmatter } from "@content/_schemas";
+import type { BaseFrontmatter } from "@content/config";
 import Datetime from "../react/Datetime";
 
 export interface Props {
   href?: string;
-  frontmatter: RecipeFrontmatter;
+  frontmatter: BaseFrontmatter;
   secHeading?: boolean;
 }
 
@@ -34,7 +34,7 @@ const { title, pubDatetime, description, tags } = frontmatter;
   {
     tags && (
       <ul class="flex flex-wrap gap-2">
-        {tags.map(tag => (
+        {tags.map((tag: string) => (
           <li>
             <a
               href={`/tags/${tag}`}

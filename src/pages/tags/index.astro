@@ -8,14 +8,14 @@ import Tag from "@components/astro/Tag.astro";
 import getUniqueTags from "@utils/getUniqueTags";
 import { SITE } from "@config";
 
-const recipes = await getCollection("recipes");
+const recipes = await getCollection("cookbook");
 
 let tags = getUniqueTags(recipes);
 ---
 
 <Layout title={`Tags | ${SITE.title}`}>
   <Header activeNav="tags" />
-  <Main pageTitle="Tags" pageDesc="All the tags used in recipes.">
+  <Main pageTitle="Tags">
     <ul>
       {tags.map(tag => <Tag name={tag} size="lg" />)}
     </ul>

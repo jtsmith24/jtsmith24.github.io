@@ -8,8 +8,7 @@ import Card from "@components/astro/Card.astro";
 import getSortedRecipes from "@utils/getSortedRecipes";
 import Hr from "@components/astro/Hr.astro";
 
-const recipes = await getCollection("recipes");
-
+const recipes = await getCollection("cookbook");
 const sortedRecipes = getSortedRecipes(recipes);
 const pinnedRecipes = sortedRecipes.filter(({ data }) => data.pinned);
 ---

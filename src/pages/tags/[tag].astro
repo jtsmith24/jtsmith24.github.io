@@ -1,37 +1,30 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Header from "@components/astro/Header.astro";
 import Footer from "@components/astro/Footer.astro";
 import Card from "@components/astro/Card.astro";
 import getUniqueTags from "@utils/getUniqueTags";
-import slugify from "@utils/slugify";
 import { SITE } from "@config";
 import getRecipesBytag from "@utils/getRecipesByTag";
 import Hr from "@components/astro/Hr.astro";
 
-export interface Props {
-  post: CollectionEntry<"recipes">;
-  tag: string;
-}
-
+//Todo: support all collections
 export async function getStaticPaths() {
-  const recipes = await getCollection("recipes");
-
+  const recipes = await getCollection("cookbook");
   const tags = getUniqueTags(recipes);
 
   return tags.map(tag => {
     return {
       params: { tag },
-      props: { tag },
     };
   });
 }
 
-const { tag } = Astro.props;
+const { tag } = Astro.params;
 
-const recipes = await getCollection("recipes", ({ data }) => !data.draft);
+const recipes = await getCollection("cookbook", ({ data }) => !data.draft);
 
 const tagRecipes = getRecipesBytag(recipes, tag);
 ---
@@ -40,13 +33,13 @@ const tagRecipes = getRecipesBytag(recipes, tag);
   <Header activeNav="tags" />
   <Main
     pageTitle={`Tag:${tag}`}
-    pageDesc={`All the articles with the tag "${tag}".`}
+    pageDesc={`All content with the tag "${tag}".`}
   >
     <ul>
       {
-        tagRecipes.map(({ data }) => (
+        tagRecipes.map(({ data, slug }) => (
           <>
-            <Card href={`/cookbook/${slugify(data)}`} frontmatter={data} />
+            <Card href={`/cookbook/${slug}`} frontmatter={data} />
             <Hr noPadding={true} className="pr-lg" />
           </>
         ))

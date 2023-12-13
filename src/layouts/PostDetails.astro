@@ -5,18 +5,20 @@ import Footer from "@components/astro/Footer.astro";
 import Tag from "@components/astro/Tag.astro";
 import Datetime from "@components/react/Datetime";
 import type { CollectionEntry } from "astro:content";
+import { slugifyStr } from "@utils/slugify";
 
 export interface Props {
-  recipe: CollectionEntry<"cookbook">;
+  post: CollectionEntry<"blog">;
 }
 
-const { recipe } = Astro.props;
+const { post } = Astro.props;
 
-const { title, author, description, ogImage, pubDatetime, tags } = recipe.data;
+const { title, author, description, ogImage, pubDatetime, tags } = post.data;
 
-const { Content } = await recipe.render();
+const { Content } = await post.render();
 
-const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
+const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
+const ogUrl = new URL(ogImageUrl ?? `/posts/${post.slug}.png`, Astro.url.origin)
   .href;
 ---
 
@@ -24,7 +26,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
   <Header />
   <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
     <button
-      class="focus-outline mt-8 mb-2 flex hover:opacity-75"
+      class="focus-outline mb-2 mt-8 flex hover:opacity-75"
       onclick="history.back()"
     >
       <svg xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +37,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
     </button>
   </div>
   <main id="main-content">
-    <h1 class="post-title">{title}</h1>
+    <h1 view-transition-name={slugifyStr(title)} class="post-title">{title}</h1>
     {
       pubDatetime && (
         <Datetime datetime={pubDatetime} size="lg" className="my-2" />
@@ -46,7 +48,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
     </article>
 
     <ul class="tags-container">
-      {tags.map((tag: string) => <Tag name={tag} />)}
+      {tags.map((tag: string) => <Tag name={slugifyStr(tag)} />)}
     </ul>
   </main>
   <Footer />
