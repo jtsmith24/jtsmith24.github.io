@@ -8,6 +8,7 @@ export const baseSchema = z.object({
   author: z.string().optional(),
   pubDatetime: z.date().optional(),
   title: z.string(),
+  thumbnail: z.string().optional(),
   pinned: z.boolean().optional(),
   draft: z.boolean().optional(),
   postSlug: z.string().optional(),
