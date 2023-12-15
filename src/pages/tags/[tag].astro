@@ -10,7 +10,6 @@ import { SITE } from "@config";
 import getRecipesBytag from "@utils/getRecipesByTag";
 import Hr from "@components/astro/Hr.astro";
 
-//TODO: support all collections
 export async function getStaticPaths() {
   const recipes = await getCollection("cookbook");
   const tags = getUniqueTags(recipes);

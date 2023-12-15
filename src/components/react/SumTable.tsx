@@ -10,15 +10,6 @@ const SumTable = ({
   rows: number;
   rowHeaders: Array<{ full: string; icon: string; color: string }>;
 }) => {
-  //TODO: Separate into different components
-  //TODO: Add a button to clear all data
-  //TODO: Add a button to set how many players there are
-  //TODO: Make more generic so that it can be used for other things
-  //TODO: Make more responsive
-  //TODO: Clean up styling
-  //TODO: Use arrows to navigate between inputs
-  //TODO: Fix enter not working on mobile
-
   const [tableData, setTableData] = useState(
     Array.from({ length: rows }, () => Array(columns).fill(""))
   );

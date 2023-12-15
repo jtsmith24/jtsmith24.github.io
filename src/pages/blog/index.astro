@@ -1,12 +1,8 @@
 ---
-import { SITE } from "@config";
 import { getCollection } from "astro:content";
 import Blog from "@layouts/BlogLayout.astro";
 
 const posts = await getCollection("blog");
-
-//TODO: const sortedRecipes = getSortedRecipes(recipes);
-//TODO: pagination
 ---
 
 <Blog posts={posts} />
