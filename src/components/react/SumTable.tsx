@@ -63,8 +63,8 @@ const SumTable = ({
   };
 
   return (
-    <div className="flex text-center text-sm text-black sm:text-lg">
-      <div className="divide-y divide-gray-200 bg-white text-xs">
+    <div className="ws-scoresheet flex border text-center text-sm sm:text-lg">
+      <div className="divide-y divide-gray-200 text-xs">
         <div className="h-12"></div>
         <div className="flex h-36 items-center justify-center whitespace-nowrap bg-green-200">
           <div
@@ -88,7 +88,7 @@ const SumTable = ({
         </div>
         <div className="h-12"></div>
       </div>
-      <div className="divide-y divide-gray-200 bg-white">
+      <div className="divide-y divide-gray-200">
         <div className="h-12"></div>
         {rowHeaders.map((header, colIndex) => (
           <div
@@ -104,7 +104,7 @@ const SumTable = ({
       </div>
       <table
         id="sum-table"
-        className="w-full table-auto divide-y divide-gray-200 border bg-white text-center"
+        className="w-full table-auto divide-y divide-gray-200 border-l text-center"
       >
         <thead className="text-gray-900">
           <tr className="divide-x">
@@ -123,7 +123,7 @@ const SumTable = ({
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200 bg-white">
+        <tbody className="divide-y divide-gray-200">
           {tableData.map((row, rowIndex) => (
             <tr className="h-12 divide-x" key={rowIndex}>
               {row.map((cellValue, colIndex) => (
@@ -132,7 +132,7 @@ const SumTable = ({
                   className="whitespace-nowrap"
                 >
                   <input
-                    className="custom-number-input w-full text-center text-black sm:text-sm"
+                    className="custom-number-input w-full text-center sm:text-sm"
                     type="text"
                     value={cellValue}
                     onChange={e => handleInputChange(e, rowIndex, colIndex)}
@@ -154,10 +154,7 @@ const SumTable = ({
             {Array(columns)
               .fill("")
               .map((_, colIndex) => (
-                <td
-                  key={colIndex}
-                  className="text-sm font-semibold text-gray-900"
-                >
+                <td key={colIndex} className="text-sm font-semibold">
                   {calculateSum(colIndex)}
                 </td>
               ))}

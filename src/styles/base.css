@@ -6,6 +6,7 @@
   :root,
   html[data-theme="light"] {
     --color-fill: 251, 254, 251;
+    --color-table-fill: 33, 39, 55;
     --color-text-base: 40, 39, 40;
     --color-accent: 0, 108, 172;
     --color-card: 230, 230, 230;
@@ -14,6 +15,7 @@
   }
   html[data-theme="dark"] {
     --color-fill: 33, 39, 55;
+    --color-table-fill: 251, 254, 251;
     --color-text-base: 234, 237, 243;
     --color-accent: 255, 107, 1;
     --color-card: 52, 63, 96;
@@ -117,5 +119,9 @@
   }
   .focus-outline {
     @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+  }
+  .ws-scoresheet,
+  .ws-scoresheet input {
+    @apply bg-skin-table text-skin-inverted;
   }
 }

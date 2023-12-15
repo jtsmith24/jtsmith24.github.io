@@ -1,5 +1,5 @@
 import Datetime from "../react/Datetime";
-import type { RecipeFrontmatter } from "@content/_schemas";
+import type { BaseFrontMatter } from "@content/config";
 import React from "react";
 
 export interface Props {
