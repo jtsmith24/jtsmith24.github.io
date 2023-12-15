@@ -38,3 +38,36 @@ collections:
           required: false,
         }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "cookbook"
+    label: "Cookbook"
+    label_singular: "Recipe"
+    folder: "src/content/cookbook"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "pubDatetime", widget: "datetime" }
+      - {
+          label: "Featured Image",
+          name: "thumbnail",
+          widget: "image",
+          required: false,
+        }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Pinned", name: "pinned", widget: "boolean", default: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Slug", name: "postSlug", widget: "string", required: false }
+      - {
+          label: "OG Image",
+          name: "ogImage",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
