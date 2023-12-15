@@ -5,7 +5,7 @@ import slugify from "@utils/slugify";
 import type { BaseFrontmatter } from "@content/config";
 import React from "react";
 
-//Todo: Make this work for all content types
+//TODO: Make this work for all content types
 export type SearchItem = {
   title: string;
   description: string;

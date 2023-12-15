@@ -27,8 +27,8 @@ const { post } = Astro.props;
 
 const posts = await getCollection("blog");
 
-//Todo: sort posts by date
-//Todo: add pagination
+//TODO: sort posts by date
+//TODO: add pagination
 ---
 
 {post ? <PostDetails post={post} /> : <Blog posts={posts} />}

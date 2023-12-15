@@ -2,8 +2,8 @@ import { z, defineCollection } from "astro:content";
 import path from "path";
 const glob = import.meta.glob("./**"); /* vite */
 
-//Todo: figure out a way to allow each collection to have its own schema
-//Todo: Create a way to get all collections without Vite
+//TODO: figure out a way to allow each collection to have its own schema
+//TODO: Create a way to get all collections without Vite
 export const baseSchema = z.object({
   author: z.string().optional(),
   pubDatetime: z.date().optional(),
