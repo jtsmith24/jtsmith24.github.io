@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import Cookbook from "@layouts/CookbookLayout.astro";
 import RecipeDetails from "@layouts/RecipeDetails.astro";
 import getPageNumbers from "@utils/getPageNumbers";
@@ -7,7 +7,7 @@ import { SITE } from "@config";
 import getSortedRecipes from "@utils/getSortedRecipes";
 
 export interface Props {
-  recipes: CollectionEntry<"cookbook">;
+  recipe: CollectionEntry<"cookbook">;
 }
 
 export async function getStaticPaths() {
@@ -25,21 +25,16 @@ export async function getStaticPaths() {
   return [...recipeResult, ...pagePaths];
 }
 
-const { slug } = Astro.params;
-const { recipe } = Astro.props;
-
 const recipes = await getCollection("cookbook");
 const sortedRecipes = getSortedRecipes(recipes);
 const totalPages = getPageNumbers(sortedRecipes.length);
 
-const currentPage =
-  slug && !isNaN(Number(slug)) && totalPages.includes(Number(slug))
-    ? Number(slug)
-    : 0;
+const currentPage = 0;
 const lastRecipe = currentPage * SITE.postPerPage;
 const startRecipe = lastRecipe - SITE.postPerPage;
 
 const paginatedRecipes = sortedRecipes.slice(startRecipe, lastRecipe);
+const { recipe } = Astro.props;
 ---
 
 {

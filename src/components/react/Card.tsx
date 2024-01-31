@@ -1,10 +1,10 @@
 import Datetime from "../react/Datetime";
-import type { BaseFrontMatter } from "@content/config";
+import type { BaseFrontmatter } from "@content/config";
 import React from "react";
 
 export interface Props {
   href?: string;
-  frontmatter: RecipeFrontmatter;
+  frontmatter: BaseFrontmatter;
   secHeading?: boolean;
 }
 
