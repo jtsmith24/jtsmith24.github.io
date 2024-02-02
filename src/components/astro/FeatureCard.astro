@@ -32,17 +32,21 @@ if (!images[thumbnail])
   />
   <div class="px-6 py-4">
     <h1 class="text-background mb-2 text-center text-xl font-bold">{title}</h1>
-    <p class="mb-4">
+    <p class="mb-4 font-sans font-thin">
       {description}
     </p>
   </div>
-  <div class="mx-auto mt-auto p-4 hover:scale-105">
-    <a
-      class="inline-block rounded-sm bg-skin-accent p-2 text-skin-inverted"
-      href={link}
-      target="_blank"
-    >
-      Live Demo
-    </a>
-  </div>
+  {
+    link && (
+      <div class="mx-auto mt-auto p-4 hover:scale-105">
+        <a
+          class="inline-block rounded-sm bg-skin-accent p-2 font-mono text-skin-inverted"
+          href={link}
+          target="_blank"
+        >
+          Live Demo
+        </a>
+      </div>
+    )
+  }
 </div>
