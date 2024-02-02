@@ -13,6 +13,7 @@ export const baseSchema = z.object({
   tags: z.array(z.string()).default(["others"]),
   ogImage: z.string().optional(),
   description: z.string(),
+  link: z.string().url().optional(),
 });
 
 export type BaseFrontmatter = z.infer<typeof baseSchema>;

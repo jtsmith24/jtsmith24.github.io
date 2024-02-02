@@ -1,5 +1,6 @@
 # Ignore everything
 title_profile.svg
+*.png
 /*
 
 # Except these files & folders
