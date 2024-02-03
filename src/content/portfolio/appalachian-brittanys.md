@@ -9,4 +9,5 @@ tags:
 ogImage: ""
 description: A website for a family-owned and operated dog breeding service.
 thumbnail: ../../images/appalachian-brittanys.png
+link: https://appalachian-brittanys.netlify.app/
 ---
