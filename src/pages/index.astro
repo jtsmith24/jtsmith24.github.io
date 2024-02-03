@@ -20,7 +20,7 @@ const pinnedProjects = projects.filter(({ data }) => data.pinned);
 
     <section id="featured">
       <h2 class="pb-10">Projects</h2>
-      <ul class="grid grid-cols-2 place-items-center gap-4">
+      <ul class="auto-flow-fr grid place-items-center gap-4 sm:grid-cols-2">
         {
           pinnedProjects.map(
             ({ data, slug }, index) =>
@@ -30,7 +30,7 @@ const pinnedProjects = projects.filter(({ data }) => data.pinned);
                     href={`/cookbook/${slug}`}
                     frontmatter={data}
                     secHeading={false}
-                  ></FeatureCard>
+                  />
                 </li>
               )
           )
