@@ -15,66 +15,71 @@ const pinnedProjects = projects.filter(({ data }) => data.pinned);
   <Header />
   <main id="main-content">
     <section id="hero">
-      <h1>Hi &#x1F44B;</h1>
-    </section>
+      <h1>
+        Hi &#x1F44B; <span class="mt-10 inline-block text-left"
+          >My name is <span class="text-skin-accent">Jordan Smith</span>, and I
+          am a developer based in Nashville, TN.</span
+        >
+      </h1>
 
-    <section id="featured">
-      <h2 class="pb-10">Projects</h2>
-      <ul class="auto-flow-fr grid place-items-center gap-4 sm:grid-cols-2">
-        {
-          pinnedProjects.map(
-            ({ data, slug }, index) =>
-              index < 4 && (
-                <li class="w-fit self-stretch">
-                  <FeatureCard
-                    href={`/cookbook/${slug}`}
-                    frontmatter={data}
-                    secHeading={false}
-                  />
-                </li>
-              )
-          )
-        }
-      </ul>
+      <section id="featured">
+        <h2 class="pb-10">Projects</h2>
+        <ul class="auto-flow-fr grid place-items-center gap-4 sm:grid-cols-2">
+          {
+            pinnedProjects.map(
+              ({ data, slug }, index) =>
+                index < 4 && (
+                  <li class="w-fit self-stretch">
+                    <FeatureCard
+                      href={`/cookbook/${slug}`}
+                      frontmatter={data}
+                      secHeading={false}
+                    />
+                  </li>
+                )
+            )
+          }
+        </ul>
+      </section>
     </section>
+    <Footer />
   </main>
-  <Footer />
+
+  <style>
+    /* ===== Hero Section ===== */
+    #hero {
+      @apply pb-6 pt-8 text-center;
+    }
+    #hero h1 {
+      @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+    }
+    #hero .rss-link {
+      @apply mb-6;
+    }
+    #hero .rss-icon {
+      @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+    }
+    #hero p {
+      @apply my-2;
+    }
+    .social-wrapper {
+      @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+    }
+    .social-links {
+      @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+    }
+
+    /* ===== Featured & Recent Posts Sections ===== */
+    #featured,
+    #recent-posts {
+      @apply pb-6 pt-12;
+    }
+    #featured h2,
+    #recent-posts h2 {
+      @apply text-center text-3xl font-semibold tracking-wide;
+    }
+    .all-posts-btn-wrapper {
+      @apply my-8 text-center;
+    }
+  </style>
 </Layout>
-
-<style>
-  /* ===== Hero Section ===== */
-  #hero {
-    @apply pb-6 pt-8;
-  }
-  #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
-  }
-  #hero .rss-link {
-    @apply mb-6;
-  }
-  #hero .rss-icon {
-    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
-  }
-  #hero p {
-    @apply my-2;
-  }
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
-  }
-  .social-links {
-    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
-  }
-
-  /* ===== Featured & Recent Posts Sections ===== */
-  #featured,
-  #recent-posts {
-    @apply pb-6 pt-12;
-  }
-  #featured h2,
-  #recent-posts h2 {
-    @apply text-center text-3xl font-semibold tracking-wide;
-  }
-  .all-posts-btn-wrapper {
-    @apply my-8 text-center;
-  }
-</style>
