@@ -1,7 +1,7 @@
 ---
 author: "Jordan Smith"
 title: "Appalachian Brittanys"
-pinned: true
+pinned: false
 draft: false
 tags:
   - portfolio
