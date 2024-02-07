@@ -3,8 +3,6 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/astro/Header.astro";
 import Footer from "@components/astro/Footer.astro";
-import LinkButton from "@components/astro/LinkButton.astro";
-import Hr from "@components/astro/Hr.astro";
 import FeatureCard from "@components/astro/FeatureCard.astro";
 
 const projects = await getCollection("portfolio");
@@ -27,14 +25,10 @@ const pinnedProjects = projects.filter(({ data }) => data.pinned);
         <ul class="auto-flow-fr grid place-items-center gap-4 sm:grid-cols-2">
           {
             pinnedProjects.map(
-              ({ data, slug }, index) =>
+              ({ data }, index) =>
                 index < 4 && (
                   <li class="w-fit self-stretch">
-                    <FeatureCard
-                      href={`/cookbook/${slug}`}
-                      frontmatter={data}
-                      secHeading={false}
-                    />
+                    <FeatureCard frontmatter={data} />
                   </li>
                 )
             )
