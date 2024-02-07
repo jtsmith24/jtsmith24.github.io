@@ -8,6 +8,6 @@ tags:
   - webdev
 ogImage: ""
 description: A spreadsheet-like app for calculating scores for the boardgame Wingspan.
-link: "https://wingspanscoresheet.vercel.app/"
+demoLink: "https://wingspanscoresheet.vercel.app/"
 thumbnail: ../../images/wingspan-scoresheet.PNG
 ---

@@ -1,14 +1,12 @@
 ---
 import type { BaseFrontmatter } from "@content/config";
 import { Image } from "astro:assets";
-import Hr from "./Hr.astro";
-
 export interface Props {
   frontmatter: BaseFrontmatter;
 }
 
 const { frontmatter } = Astro.props;
-const { title, description, link, thumbnail, postSlug } = frontmatter;
+const { title, description, demoLink, thumbnail, postSlug } = frontmatter;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../../images/*.{jpeg,jpg,png,PNG,gif}"
@@ -52,11 +50,11 @@ if (thumbnail && !images[thumbnail])
       )
     }
     {
-      link && (
+      demoLink && (
         <div class="hover:scale-105">
           <a
             class="inline-block rounded-sm bg-skin-accent p-2 font-mono text-skin-inverted"
-            href={link}
+            href={demoLink}
             target="_blank"
           >
             Live Demo
