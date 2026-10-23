@@ -1,12 +1,21 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/astro/Header.astro";
 import Footer from "@components/astro/Footer.astro";
 import FeatureCard from "@components/astro/FeatureCard.astro";
+import Socials from "@components/astro/Socials.astro";
+import Hr from "@components/astro/Hr.astro";
+import {
+  summary,
+  experience,
+  projects,
+  skills,
+  education,
+} from "@data/resume";
 
-const projects = await getCollection("portfolio");
-const pinnedProjects = projects.filter(({ data }) => data.pinned);
+const sortedProjects = [...projects].sort(
+  (a, b) => Number(!!b.featured) - Number(!!a.featured)
+);
 ---
 
 <Layout>
@@ -19,61 +28,139 @@ const pinnedProjects = projects.filter(({ data }) => data.pinned);
           I'm a software engineer based in Nashville, TN.</span
         >
       </h1>
-
-      <section id="featured">
-        <h2 class="pb-10">Projects</h2>
-        <ul class="auto-flow-fr grid place-items-center gap-4 sm:grid-cols-2">
-          {
-            pinnedProjects.map(
-              ({ data }, index) =>
-                index < 4 && (
-                  <li class="w-fit self-stretch">
-                    <FeatureCard frontmatter={data} />
-                  </li>
-                )
-            )
-          }
-        </ul>
-      </section>
+      <p class="summary">{summary}</p>
+      <Socials centered />
     </section>
-    <Footer />
+
+    <Hr />
+
+    <section id="experience">
+      <h2>Experience</h2>
+      {
+        experience.map(job => (
+          <article class="job">
+            <h3>
+              <span class="text-skin-accent">{job.company}</span>
+              {job.companyNote && (
+                <span class="company-note">({job.companyNote})</span>
+              )}
+            </h3>
+            <p class="job-meta">
+              {job.location} · {job.dates}
+            </p>
+            <ul class="roles">
+              {job.roles.map(role => (
+                <li>
+                  <span class="font-semibold">{role.title}</span>
+                  <span class="opacity-75"> · {role.dates}</span>
+                  {role.note && (
+                    <span class="block text-sm opacity-75">{role.note}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <ul class="bullets">
+              {job.bullets.map(bullet => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </section>
+
+    <Hr />
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="grid gap-6">
+        {
+          sortedProjects.map(project => (
+            <li>
+              <FeatureCard project={project} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <Hr />
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <dl>
+        {
+          skills.map(({ group, items }) => (
+            <div class="skill-group">
+              <dt>{group}</dt>
+              <dd>{items.join(", ")}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+
+    <Hr />
+
+    <section id="education">
+      <h2>Education</h2>
+      <p class="text-center">
+        <span class="font-semibold">{education.degree}</span><br />
+        {education.school} · {education.year}
+      </p>
+    </section>
   </main>
+  <Footer />
 
   <style>
     /* ===== Hero Section ===== */
     #hero {
-      @apply pb-6 pt-8 text-center;
+      @apply pb-10 pt-8 text-center;
     }
     #hero h1 {
       @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
     }
-    #hero .rss-link {
-      @apply mb-6;
-    }
-    #hero .rss-icon {
-      @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
-    }
-    #hero p {
-      @apply my-2;
-    }
-    .social-wrapper {
-      @apply mt-4 flex flex-col sm:flex-row sm:items-center;
-    }
-    .social-links {
-      @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+    #hero .summary {
+      @apply mb-6 text-left leading-relaxed;
     }
 
-    /* ===== Featured & Recent Posts Sections ===== */
-    #featured,
-    #recent-posts {
-      @apply pb-6 pt-12;
+    /* ===== Content Sections ===== */
+    #experience,
+    #projects,
+    #skills,
+    #education {
+      @apply scroll-mt-4 pb-10 pt-12;
     }
-    #featured h2,
-    #recent-posts h2 {
-      @apply text-center text-3xl font-semibold tracking-wide;
+    h2 {
+      @apply pb-10 text-center text-3xl font-semibold tracking-wide;
     }
-    .all-posts-btn-wrapper {
-      @apply my-8 text-center;
+
+    /* ===== Experience ===== */
+    .job {
+      @apply mb-12 last:mb-0;
+    }
+    .job h3 {
+      @apply text-xl font-bold;
+    }
+    .company-note {
+      @apply ml-2 text-sm font-normal opacity-75;
+    }
+    .job-meta {
+      @apply mb-4 text-sm opacity-75;
+    }
+    .roles {
+      @apply mb-4 space-y-1 border-l-2 border-skin-accent pl-4;
+    }
+    .bullets {
+      @apply list-disc space-y-3 pl-5 leading-relaxed marker:text-skin-accent;
+    }
+
+    /* ===== Skills ===== */
+    .skill-group {
+      @apply mb-4 sm:flex sm:gap-4;
+    }
+    .skill-group dt {
+      @apply font-semibold text-skin-accent sm:w-48 sm:shrink-0;
     }
   </style>
 </Layout>

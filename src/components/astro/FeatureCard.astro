@@ -1,19 +1,19 @@
 ---
-import type { BaseFrontmatter } from "@content/config";
+import type { Project } from "@data/resume";
 import { Image } from "astro:assets";
 export interface Props {
-  frontmatter: BaseFrontmatter;
+  project: Project;
 }
 
-const { frontmatter } = Astro.props;
-const { title, description, demoLink, thumbnail, postSlug } = frontmatter;
+const { project } = Astro.props;
+const { name, meta, description, bullets, links, thumbnail } = project;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../../images/*.{jpeg,jpg,png,PNG,gif}"
 );
 if (thumbnail && !images[thumbnail])
   throw new Error(
-    `"${thumbnail}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+    `"${thumbnail}" does not exist in glob: "src/images/*.{jpeg,jpg,png,gif}"`
   );
 ---
 
@@ -26,41 +26,44 @@ if (thumbnail && !images[thumbnail])
         class="aspect-square rounded-sm object-cover p-6"
         width="700"
         src={images[thumbnail]()}
-        alt={description ?? ""}
+        alt={`Screenshot of ${name}`}
       />
     )
   }
   <div class="px-6 py-4">
-    <h1 class="text-background mb-2 text-center text-xl font-bold">{title}</h1>
-    <p class="mb-4">
-      {description}
-    </p>
+    <h3 class="mb-2 text-center text-xl font-bold">{name}</h3>
+    {meta && <p class="mb-4 text-center text-sm opacity-75">{meta}</p>}
+    {description && <p class="mb-4">{description}</p>}
+    {
+      bullets && (
+        <ul class="card-bullets">
+          {bullets.map(bullet => (
+            <li>{bullet}</li>
+          ))}
+        </ul>
+      )
+    }
   </div>
   <div class="mt-auto flex justify-center gap-4 pb-4">
     {
-      postSlug && (
+      links.map(link => (
         <div class="hover:scale-105">
           <a
             class="inline-block rounded-sm bg-skin-accent p-2 font-mono text-skin-inverted"
-            href={`/portfolio/${postSlug}`}
-          >
-            About
-          </a>
-        </div>
-      )
-    }
-    {
-      demoLink && (
-        <div class="hover:scale-105">
-          <a
-            class="inline-block rounded-sm bg-skin-accent p-2 font-mono text-skin-inverted"
-            href={demoLink}
+            href={link.href}
             target="_blank"
+            rel="noopener"
           >
-            Live Demo
+            {link.label}
           </a>
         </div>
-      )
+      ))
     }
   </div>
 </div>
+
+<style>
+  .card-bullets {
+    @apply mb-4 list-disc space-y-3 pl-5 marker:text-skin-accent;
+  }
+</style>

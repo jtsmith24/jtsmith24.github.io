@@ -1,9 +1,9 @@
 import type { SocialObjects } from "./types";
 
 export const SITE = {
-  website: "http://jordansmithdev.com",
+  website: "https://jordansmithdev.com",
   author: "Jordan Smith",
-  desc: "Jordan Smith - Portfolio",
+  desc: "Jordan Smith is a full-stack software engineer in Nashville, TN, building with .NET, React and Azure.",
   title: "JordanSmithDev",
   ogImage: "",
   lightAndDarkMode: true,
@@ -28,12 +28,6 @@ export const SOCIALS: SocialObjects = [
     name: "Github",
     href: "https://github.com/jtsmith24",
     linkTitle: `Github`,
-    active: true,
-  },
-  {
-    name: "YouTube",
-    href: "https://www.youtube.com/@JordanSmithFilms",
-    linkTitle: `YouTube channel`,
     active: true,
   },
   {
