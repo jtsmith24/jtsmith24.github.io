@@ -26,10 +26,8 @@ const sortedProjects = [...projects].sort(
   <main id="main-content">
     <section id="hero">
       <h1>
-        Hi &#x1F44B; <span class="mt-10 inline-block text-left"
-          >My name is <span class="text-skin-accent">Jordan Smith</span>, and
-          I'm a full-stack software engineer based in Nashville, TN.</span
-        >
+        My name is <span class="text-skin-accent">Jordan Smith</span>, and I'm a
+        full-stack software engineer based in Nashville, TN.
       </h1>
       <p class="summary">
         {introBefore}<a
@@ -127,10 +125,13 @@ const sortedProjects = [...projects].sort(
       @apply pb-10 pt-8 text-center;
     }
     #hero h1 {
-      @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+      @apply my-4 text-left text-3xl font-bold sm:my-8 sm:text-5xl;
     }
     #hero .summary {
       @apply mb-6 text-left leading-relaxed;
+    }
+    #hero :global(.social-icons) {
+      @apply justify-start;
     }
     #hero .summary a {
       @apply underline decoration-dashed underline-offset-4 hover:text-skin-accent;
