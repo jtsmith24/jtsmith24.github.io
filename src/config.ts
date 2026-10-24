@@ -6,7 +6,6 @@ export const SITE = {
   desc: "Jordan Smith is a full-stack software engineer in Nashville, TN, building with .NET, React and Azure.",
   title: "Jordan Smith · Software Engineer",
   ogImage: "/og.png",
-  lightAndDarkMode: true,
   postPerPage: 5,
 };
 

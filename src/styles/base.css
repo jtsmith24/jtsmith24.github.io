@@ -3,19 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  :root,
-  html[data-theme="light"] {
-    /* Arkansas cardinal on a warm off-white */
-    --color-fill: 250, 248, 245;
-    --color-table-fill: 45, 45, 48;
-    --color-text-base: 40, 36, 36;
-    --color-accent: 157, 34, 53;
-    --color-card: 238, 232, 228;
-    --color-card-muted: 220, 210, 205;
-    --color-border: 225, 205, 205;
-  }
-  html[data-theme="dark"] {
-    /* Charcoal; the accent is a lighter cardinal so it stays readable */
+  :root {
+    /* Charcoal with Arkansas cardinal. The accent is a lighter cardinal so
+       text in it stays readable; --color-card-muted is true cardinal for
+       backgrounds behind white text. */
+    color-scheme: dark;
     --color-fill: 45, 45, 48;
     --color-table-fill: 250, 248, 245;
     --color-text-base: 245, 245, 245;
@@ -23,14 +15,6 @@
     --color-card: 60, 60, 64;
     --color-card-muted: 157, 34, 53;
     --color-border: 157, 34, 53;
-  }
-  #sun-svg,
-  html[data-theme="dark"] #moon-svg {
-    display: none;
-  }
-  #moon-svg,
-  html[data-theme="dark"] #sun-svg {
-    display: block;
   }
   body {
     @apply flex min-h-screen flex-col bg-skin-fill font-sans text-skin-base 

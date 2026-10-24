@@ -66,12 +66,7 @@ if (thumbnail && !images[thumbnail])
 
 <style>
   .card-btn {
-    @apply bg-skin-accent text-skin-inverted;
-  }
-  /* The dark-mode accent is too light behind dark text; use true cardinal. */
-  :global(html[data-theme="dark"]) .card-btn {
-    background-color: rgb(157, 34, 53);
-    color: #fff;
+    @apply bg-skin-card-muted text-white;
   }
   .card-bullets {
     @apply mb-4 list-disc space-y-3 pl-5 marker:text-skin-accent;
