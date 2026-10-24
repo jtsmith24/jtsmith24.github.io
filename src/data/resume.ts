@@ -94,6 +94,8 @@ export interface Project {
   /** Short line under the name, e.g. "Personal project · 2026 – Present". */
   meta?: string;
   featured?: boolean;
+  /** Kept in the file but not shown on the site. */
+  hidden?: boolean;
   /** One paragraph, or a list of bullets. */
   description?: string;
   bullets?: string[];
@@ -118,6 +120,8 @@ export const projects: Project[] = [
   },
   {
     name: "Wingspan Scoresheet",
+    // Hidden until the app gets more work.
+    hidden: true,
     description:
       "A digital score sheet for the board game Wingspan that adds up every scoring category automatically, with keyboard navigation for quick entry.",
     links: [

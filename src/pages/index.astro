@@ -16,9 +16,9 @@ import {
 // Link the hymnal.app mention in the intro.
 const [introBefore, introAfter] = siteIntro.split("hymnal.app");
 
-const sortedProjects = [...projects].sort(
-  (a, b) => Number(!!b.featured) - Number(!!a.featured)
-);
+const sortedProjects = projects
+  .filter(project => !project.hidden)
+  .sort((a, b) => Number(!!b.featured) - Number(!!a.featured));
 ---
 
 <Layout>
