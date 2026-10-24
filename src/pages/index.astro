@@ -13,6 +13,9 @@ import {
   education,
 } from "@data/resume";
 
+// Link the hymnal.app mention in the intro.
+const [introBefore, introAfter] = siteIntro.split("hymnal.app");
+
 const sortedProjects = [...projects].sort(
   (a, b) => Number(!!b.featured) - Number(!!a.featured)
 );
@@ -28,7 +31,13 @@ const sortedProjects = [...projects].sort(
           I'm a full-stack software engineer based in Nashville, TN.</span
         >
       </h1>
-      <p class="summary">{siteIntro}</p>
+      <p class="summary">
+        {introBefore}<a
+          href="https://hymnal.app"
+          target="_blank"
+          rel="noopener">hymnal.app</a
+        >{introAfter}
+      </p>
       <Socials centered />
     </section>
 
@@ -122,6 +131,9 @@ const sortedProjects = [...projects].sort(
     }
     #hero .summary {
       @apply mb-6 text-left leading-relaxed;
+    }
+    #hero .summary a {
+      @apply underline decoration-dashed underline-offset-4 hover:text-skin-accent;
     }
 
     /* ===== Content Sections ===== */
