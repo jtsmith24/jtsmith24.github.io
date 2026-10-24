@@ -3,7 +3,6 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/astro/Header.astro";
 import Footer from "@components/astro/Footer.astro";
 import FeatureCard from "@components/astro/FeatureCard.astro";
-import Socials from "@components/astro/Socials.astro";
 import Hr from "@components/astro/Hr.astro";
 import {
   siteIntro,
@@ -36,7 +35,6 @@ const sortedProjects = projects
           rel="noopener">hymnal.app</a
         >{introAfter}
       </p>
-      <Socials centered />
     </section>
 
     <Hr />
@@ -131,9 +129,6 @@ const sortedProjects = projects
     }
     #hero .summary {
       @apply mb-6 text-left leading-relaxed;
-    }
-    #hero :global(.social-icons) {
-      @apply justify-start;
     }
     #hero .summary a {
       @apply underline decoration-dashed underline-offset-4 hover:text-skin-accent;
