@@ -51,7 +51,7 @@ if (thumbnail && !images[thumbnail])
       links.map(link => (
         <div class="hover:scale-105">
           <a
-            class="inline-block rounded-sm bg-skin-accent p-2 font-mono text-skin-inverted"
+            class="card-btn inline-block rounded-sm p-2 font-mono"
             href={link.href}
             target="_blank"
             rel="noopener"
@@ -65,6 +65,14 @@ if (thumbnail && !images[thumbnail])
 </div>
 
 <style>
+  .card-btn {
+    @apply bg-skin-accent text-skin-inverted;
+  }
+  /* The dark-mode accent is too light behind dark text; use true cardinal. */
+  :global(html[data-theme="dark"]) .card-btn {
+    background-color: rgb(157, 34, 53);
+    color: #fff;
+  }
   .card-bullets {
     @apply mb-4 list-disc space-y-3 pl-5 marker:text-skin-accent;
   }
