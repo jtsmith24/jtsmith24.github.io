@@ -1,12 +1,11 @@
 import type { SocialObjects } from "./types";
 
 export const SITE = {
-  website: "http://jordansmithdev.com",
+  website: "https://jordansmithdev.com",
   author: "Jordan Smith",
-  desc: "Jordan Smith - Portfolio",
-  title: "JordanSmithDev",
-  ogImage: "",
-  lightAndDarkMode: true,
+  desc: "Jordan Smith is a full-stack software engineer in Nashville, TN, building with .NET, React and Azure.",
+  title: "Jordan Smith · Software Engineer",
+  ogImage: "/og.png",
   postPerPage: 5,
 };
 
@@ -21,25 +20,19 @@ export const SOCIALS: SocialObjects = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/jordan-smith-nashdev/",
-    linkTitle: `${SITE.title} on LinkedIn`,
+    linkTitle: `${SITE.author} on LinkedIn`,
     active: true,
   },
   {
     name: "Github",
     href: "https://github.com/jtsmith24",
-    linkTitle: `Github`,
-    active: true,
-  },
-  {
-    name: "YouTube",
-    href: "https://www.youtube.com/@JordanSmithFilms",
-    linkTitle: `YouTube channel`,
+    linkTitle: `${SITE.author} on GitHub`,
     active: true,
   },
   {
     name: "Mail",
     href: "mailto:jordansmithdev@gmail.com",
-    linkTitle: `Send an email to ${SITE.title}`,
+    linkTitle: `Send an email to ${SITE.author}`,
     active: true,
   },
 ];
