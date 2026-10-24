@@ -4,7 +4,7 @@ export const SITE = {
   website: "https://jordansmithdev.com",
   author: "Jordan Smith",
   desc: "Jordan Smith is a full-stack software engineer in Nashville, TN, building with .NET, React and Azure.",
-  title: "JordanSmithDev",
+  title: "Jordan Smith · Software Engineer",
   ogImage: "",
   lightAndDarkMode: true,
   postPerPage: 5,
@@ -21,19 +21,19 @@ export const SOCIALS: SocialObjects = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/jordan-smith-nashdev/",
-    linkTitle: `${SITE.title} on LinkedIn`,
+    linkTitle: `${SITE.author} on LinkedIn`,
     active: true,
   },
   {
     name: "Github",
     href: "https://github.com/jtsmith24",
-    linkTitle: `Github`,
+    linkTitle: `${SITE.author} on GitHub`,
     active: true,
   },
   {
     name: "Mail",
     href: "mailto:jordansmithdev@gmail.com",
-    linkTitle: `Send an email to ${SITE.title}`,
+    linkTitle: `Send an email to ${SITE.author}`,
     active: true,
   },
 ];

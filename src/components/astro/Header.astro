@@ -1,5 +1,5 @@
 ---
-import { LOGO_IMAGE, SITE } from "@config";
+import { SITE } from "@config";
 import Hr from "./Hr.astro";
 ---
 
@@ -7,9 +7,6 @@ import Hr from "./Hr.astro";
   <a id="skip-to-content" href="#main-content">Skip to content</a>
   <div class="nav-container">
     <div class="top-nav-wrap">
-      <a href="/" class="logo">
-        {SITE.title}
-      </a>
       <nav id="nav-menu">
         <button
           class="hamburger-menu focus-outline"
@@ -69,9 +66,6 @@ import Hr from "./Hr.astro";
   }
   .top-nav-wrap {
     @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
-  }
-  .logo {
-    @apply absolute py-1 text-xl font-semibold hover:text-skin-accent sm:static sm:text-2xl;
   }
   .hamburger-menu {
     @apply self-end p-2 sm:hidden;

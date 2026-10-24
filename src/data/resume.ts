@@ -16,6 +16,14 @@ export const headline =
 
 export const summary =
   "Full-stack software engineer with 10 years of experience, most of it building clinical case management applications in .NET, React and Azure. Focused on product flow and user experience. Most recently conceived and launched hymnal.app as a one-person product team, directing AI coding agents through a review workflow I designed while setting the product direction and the quality bar.";
+
+/**
+ * The website's version of the summary, in first person. It follows the hero
+ * line ("...a full-stack software engineer based in Nashville"), so it skips
+ * the job title. Same facts as `summary`; keep the two in sync.
+ */
+export const siteIntro =
+  "I have 10 years of experience, most of it building clinical case management applications in .NET, React and Azure, with a focus on product flow and user experience. Most recently, I conceived and launched hymnal.app as a one-person product team, directing AI coding agents through a review workflow I designed while setting the product direction and the quality bar.";
 // ---------------------------------------------------------------------------
 
 export const location = "Nashville, TN";

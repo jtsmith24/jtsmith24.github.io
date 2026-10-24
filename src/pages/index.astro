@@ -6,7 +6,7 @@ import FeatureCard from "@components/astro/FeatureCard.astro";
 import Socials from "@components/astro/Socials.astro";
 import Hr from "@components/astro/Hr.astro";
 import {
-  summary,
+  siteIntro,
   experience,
   projects,
   skills,
@@ -25,10 +25,10 @@ const sortedProjects = [...projects].sort(
       <h1>
         Hi &#x1F44B; <span class="mt-10 inline-block text-left"
           >My name is <span class="text-skin-accent">Jordan Smith</span>, and
-          I'm a software engineer based in Nashville, TN.</span
+          I'm a full-stack software engineer based in Nashville, TN.</span
         >
       </h1>
-      <p class="summary">{summary}</p>
+      <p class="summary">{siteIntro}</p>
       <Socials centered />
     </section>
 
