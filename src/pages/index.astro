@@ -5,7 +5,6 @@ import Footer from "@components/astro/Footer.astro";
 import FeatureCard from "@components/astro/FeatureCard.astro";
 import Socials from "@components/astro/Socials.astro";
 import Hr from "@components/astro/Hr.astro";
-import { SOCIALS } from "@config";
 import {
   siteIntro,
   experience,
@@ -13,8 +12,6 @@ import {
   skills,
   education,
 } from "@data/resume";
-
-const emailHref = SOCIALS.find(social => social.name === "Mail")?.href;
 
 // Link the hymnal.app mention in the intro.
 const [introBefore, introAfter] = siteIntro.split("hymnal.app");
@@ -39,10 +36,7 @@ const sortedProjects = projects
           rel="noopener">hymnal.app</a
         >{introAfter}
       </p>
-      <div class="contact">
-        <a class="email-btn" href={emailHref}>Email me</a>
-        <Socials />
-      </div>
+      <Socials centered />
     </section>
 
     <Hr />
@@ -138,11 +132,8 @@ const sortedProjects = projects
     #hero .summary {
       @apply mb-6 text-left leading-relaxed;
     }
-    .contact {
-      @apply flex flex-wrap items-center gap-4;
-    }
-    .email-btn {
-      @apply inline-block rounded-sm bg-skin-accent px-4 py-2 font-mono text-skin-inverted hover:scale-105;
+    #hero :global(.social-icons) {
+      @apply justify-start;
     }
     #hero .summary a {
       @apply underline decoration-dashed underline-offset-4 hover:text-skin-accent;
