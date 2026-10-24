@@ -40,8 +40,14 @@ export interface Job {
   location: string;
   dates: string;
   roles: Role[];
-  bullets: string[];
+  bullets: Bullet[];
 }
+
+/**
+ * A bullet's `label` is a short bold lead-in to help scanning. It is a
+ * heading only: the approved claim is entirely in `text`.
+ */
+export type Bullet = string | { label: string; text: string };
 
 /**
  * eviCore end date: "Present" until employment formally ends on 2026-11-15,
@@ -64,12 +70,30 @@ export const experience: Job[] = [
       },
     ],
     bullets: [
-      "Built a care coordination app, then reused its foundation to build transition of care: an intake workflow, a case view with notes, clinical documents and case actions, and worklists where supervisors assign cases and nurses work their own, replacing manual tracking. Worked across the APIs, pipelines and front end, with the app’s flow and user experience as my focus.",
-      "Built those apps as event-driven microservices that communicated through Kafka, keeping the services decoupled, with Cosmos DB and Docker, plus case search and a notifications proof of concept; wrote their Terraform from scratch and set up CI/CD pipelines with zero-downtime deploys using deployment slots.",
-      "Served as the onshore technical point of contact for about 10 offshore engineers: reviewed code quality, answered technical questions, handled production and environment access they lacked, and troubleshot failed pushes and deployments, in a role growing toward team architect.",
-      "Joined a team with almost no documentation and built a knowledge base that gave AI agents its domain knowledge, past decisions and system setup, with automated privacy scans and my own review gating everything that went in; within weeks, used it to find and fix a data-corruption bug that had existed for years.",
-      "Kept a production healthcare platform stable through its sunset: fixed health checks that caused false deploy failures, cleaned up deployment slot swaps, improved monitoring, and moved users to the replacement platform.",
-      "Moved scheduled database jobs off SQL Server Agent onto a config-driven Windows Task Scheduler harness that logs each run and sets up schedules automatically at deploy, so failures that could go unnoticed now show up; migrated the first jobs and built the pattern for the rest.",
+      {
+        label: "Clinical apps",
+        text: "Built a care coordination app, then reused its foundation to build transition of care: an intake workflow, a case view with notes, clinical documents and case actions, and worklists where supervisors assign cases and nurses work their own, replacing manual tracking. Worked across the APIs, pipelines and front end, with the app’s flow and user experience as my focus.",
+      },
+      {
+        label: "Architecture and delivery",
+        text: "Built those apps as event-driven microservices that communicated through Kafka, keeping the services decoupled, with Cosmos DB and Docker, plus case search and a notifications proof of concept; wrote their Terraform from scratch and set up CI/CD pipelines with zero-downtime deploys using deployment slots.",
+      },
+      {
+        label: "Offshore engineers",
+        text: "Served as the onshore technical point of contact for about 10 offshore engineers: reviewed code quality, answered technical questions, handled production and environment access they lacked, and troubleshot failed pushes and deployments, in a role growing toward team architect.",
+      },
+      {
+        label: "Knowledge base",
+        text: "Joined a team with almost no documentation and built a knowledge base that gave AI agents its domain knowledge, past decisions and system setup, with automated privacy scans and my own review gating everything that went in; within weeks, used it to find and fix a data-corruption bug that had existed for years.",
+      },
+      {
+        label: "Platform sunset",
+        text: "Kept a production healthcare platform stable through its sunset: fixed health checks that caused false deploy failures, cleaned up deployment slot swaps, improved monitoring, and moved users to the replacement platform.",
+      },
+      {
+        label: "Scheduled jobs",
+        text: "Moved scheduled database jobs off SQL Server Agent onto a config-driven Windows Task Scheduler harness that logs each run and sets up schedules automatically at deploy, so failures that could go unnoticed now show up; migrated the first jobs and built the pattern for the rest.",
+      },
     ],
   },
   {
@@ -115,6 +139,7 @@ export const projects: Project[] = [
       "Built with Next.js, TypeScript, Postgres (Supabase) and Vercel, with automated unit, integration and end-to-end tests in CI, including database permission checks.",
       "Directed AI coding agents through a review workflow I designed, with independent reviews scaled to risk and my approval on every merge, and merged 200+ reviewed pull requests.",
     ],
+    thumbnail: "../../images/hymnal.png",
     // The repo is private: live site only, no code link.
     links: [{ label: "hymnal.app", href: "https://hymnal.app" }],
   },

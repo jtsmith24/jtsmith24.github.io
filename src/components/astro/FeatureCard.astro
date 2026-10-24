@@ -22,12 +22,14 @@ if (thumbnail && !images[thumbnail])
 >
   {
     thumbnail && (
-      <Image
-        class="aspect-square rounded-sm object-cover p-6"
-        width="700"
-        src={images[thumbnail]()}
-        alt={`Screenshot of ${name}`}
-      />
+      <div class="px-6 pt-6">
+        <Image
+          class="w-full rounded-sm border border-skin-line"
+          width="1400"
+          src={images[thumbnail]()}
+          alt={`Screenshot of the ${name} home page`}
+        />
+      </div>
     )
   }
   <div class="px-6 py-4">

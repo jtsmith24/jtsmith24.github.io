@@ -5,6 +5,7 @@ import Footer from "@components/astro/Footer.astro";
 import FeatureCard from "@components/astro/FeatureCard.astro";
 import Socials from "@components/astro/Socials.astro";
 import Hr from "@components/astro/Hr.astro";
+import { SOCIALS } from "@config";
 import {
   siteIntro,
   experience,
@@ -12,6 +13,8 @@ import {
   skills,
   education,
 } from "@data/resume";
+
+const emailHref = SOCIALS.find(social => social.name === "Mail")?.href;
 
 // Link the hymnal.app mention in the intro.
 const [introBefore, introAfter] = siteIntro.split("hymnal.app");
@@ -36,7 +39,10 @@ const sortedProjects = projects
           rel="noopener">hymnal.app</a
         >{introAfter}
       </p>
-      <Socials centered />
+      <div class="contact">
+        <a class="email-btn" href={emailHref}>Email me</a>
+        <Socials />
+      </div>
     </section>
 
     <Hr />
@@ -67,9 +73,15 @@ const sortedProjects = projects
               ))}
             </ul>
             <ul class="bullets">
-              {job.bullets.map(bullet => (
-                <li>{bullet}</li>
-              ))}
+              {job.bullets.map(bullet =>
+                typeof bullet === "string" ? (
+                  <li>{bullet}</li>
+                ) : (
+                  <li>
+                    <strong>{bullet.label}.</strong> {bullet.text}
+                  </li>
+                )
+              )}
             </ul>
           </article>
         ))
@@ -94,7 +106,7 @@ const sortedProjects = projects
     <Hr />
 
     <section id="skills">
-      <h2>Skills</h2>
+      <h2>Skills and education</h2>
       <dl>
         {
           skills.map(({ group, items }) => (
@@ -104,17 +116,13 @@ const sortedProjects = projects
             </div>
           ))
         }
+        <div class="skill-group">
+          <dt>Education</dt>
+          <dd>
+            {education.degree} · {education.school} · {education.year}
+          </dd>
+        </div>
       </dl>
-    </section>
-
-    <Hr />
-
-    <section id="education">
-      <h2>Education</h2>
-      <p class="text-center">
-        <span class="font-semibold">{education.degree}</span><br />
-        {education.school} · {education.year}
-      </p>
     </section>
   </main>
   <Footer />
@@ -130,8 +138,11 @@ const sortedProjects = projects
     #hero .summary {
       @apply mb-6 text-left leading-relaxed;
     }
-    #hero :global(.social-icons) {
-      @apply justify-start;
+    .contact {
+      @apply flex flex-wrap items-center gap-4;
+    }
+    .email-btn {
+      @apply inline-block rounded-sm bg-skin-accent px-4 py-2 font-mono text-skin-inverted hover:scale-105;
     }
     #hero .summary a {
       @apply underline decoration-dashed underline-offset-4 hover:text-skin-accent;
@@ -140,8 +151,7 @@ const sortedProjects = projects
     /* ===== Content Sections ===== */
     #experience,
     #projects,
-    #skills,
-    #education {
+    #skills {
       @apply scroll-mt-4 pb-10 pt-12;
     }
     h2 {
